@@ -82,7 +82,6 @@ def handle_line(line, document_state):
     return document_state.finalize()
   else:
     row = line.split()
-    print row
     if len(row) == 0:
       document_state.sentences.append(tuple(document_state.text))
       del document_state.text[:]
