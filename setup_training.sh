@@ -35,7 +35,7 @@ cat friends.train.trial/friends.train.scene_delim.conll >> train.english.v4_auto
 cat friends.train.trial/friends.trial.scene_delim.conll >> dev.english.v4_auto_conll
 
 # compile_language english
-python2 minimize.py
+python minimize.py
 
-python2 get_char_vocab.py
-python2 filter_embeddings.py glove.840B.300d.txt train.english.jsonlines dev.english.jsonlines test.english.jsonlines
+python get_char_vocab.py
+python filter_embeddings.py glove.840B.300d.txt train.english.jsonlines dev.english.jsonlines test.english.jsonlines
