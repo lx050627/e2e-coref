@@ -1,8 +1,13 @@
 *.pyc
 *.so
 *.jsonlines
-logs
 conll-2012
 *.txt
 *.txt.filtered
 *.v*_*_conll
+*.zip
+
+logs
+!logs/best
+logs/best
+!logs/best/model.max.ckpt
