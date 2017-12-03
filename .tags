@@ -1,0 +1,296 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AntecedentsOp	coref_kernels.cc	/^  explicit AntecedentsOp(OpKernelConstruction* context) : OpKernel(context) {}$/;"	f	class:AntecedentsOp
+AntecedentsOp	coref_kernels.cc	/^REGISTER_KERNEL_BUILDER(Name("Antecedents").Device(DEVICE_CPU), AntecedentsOp);$/;"	v
+AntecedentsOp	coref_kernels.cc	/^class AntecedentsOp : public OpKernel {$/;"	c	file:
+BEGIN_DOCUMENT_REGEX	conll.py	/^BEGIN_DOCUMENT_REGEX = re.compile(r"#begin document \\((.*)\\); part (\\d+)")$/;"	v
+COREF_RESULTS_REGEX	conll.py	/^COREF_RESULTS_REGEX = re.compile(r".*Coreference: Recall: \\([0-9.]+ \/ [0-9.]+\\) ([0-9.]+)%\\tPrecision: \\([0-9.]+ \/ [0-9.]+\\) ([0-9.]+)%\\tF1: ([0-9.]+)%.*", re.DOTALL)$/;"	v
+CorefEvaluator	metrics.py	/^class CorefEvaluator(object):$/;"	c
+CorefModel	coref_model.py	/^class CorefModel(object):$/;"	c
+CorefRequestHandler	demo.py	/^class CorefRequestHandler(BaseHTTPRequestHandler):$/;"	c
+CustomLSTMCell	util.py	/^class CustomLSTMCell(tf.contrib.rnn.RNNCell):$/;"	c
+DistanceBinsOp	coref_kernels.cc	/^  explicit DistanceBinsOp(OpKernelConstruction* context) : OpKernel(context) {}$/;"	f	class:DistanceBinsOp
+DistanceBinsOp	coref_kernels.cc	/^REGISTER_KERNEL_BUILDER(Name("DistanceBins").Device(DEVICE_CPU), DistanceBinsOp);$/;"	v
+DistanceBinsOp	coref_kernels.cc	/^class DistanceBinsOp : public OpKernel {$/;"	c	file:
+DocumentState	minimize.py	/^class DocumentState(object):$/;"	c
+Evaluator	metrics.py	/^class Evaluator(object):$/;"	c
+ExtractMentionsOp	coref_kernels.cc	/^  explicit ExtractMentionsOp(OpKernelConstruction* context) : OpKernel(context) {}$/;"	f	class:ExtractMentionsOp
+ExtractMentionsOp	coref_kernels.cc	/^REGISTER_KERNEL_BUILDER(Name("ExtractMentions").Device(DEVICE_CPU), ExtractMentionsOp);$/;"	v
+ExtractMentionsOp	coref_kernels.cc	/^class ExtractMentionsOp : public OpKernel {$/;"	c	file:
+PORT	html/query.cgi	/^PORT = 10001$/;"	v
+RetrievalEvaluator	util.py	/^class RetrievalEvaluator(object):$/;"	c
+SERVER	html/query.cgi	/^SERVER = "http:\/\/localhost"$/;"	v
+SpansOp	coref_kernels.cc	/^  explicit SpansOp(OpKernelConstruction* context) : OpKernel(context) {$/;"	f	class:SpansOp
+SpansOp	coref_kernels.cc	/^REGISTER_KERNEL_BUILDER(Name("Spans").Device(DEVICE_CPU), SpansOp);$/;"	v
+SpansOp	coref_kernels.cc	/^class SpansOp : public OpKernel {$/;"	c	file:
+__call__	util.py	/^  def __call__(self, inputs, state, scope=None):$/;"	m	class:CustomLSTMCell	file:
+__init__	coref_model.py	/^  def __init__(self, config):$/;"	m	class:CorefModel
+__init__	metrics.py	/^    def __init__(self):$/;"	m	class:CorefEvaluator
+__init__	metrics.py	/^    def __init__(self, metric, beta=1):$/;"	m	class:Evaluator
+__init__	minimize.py	/^  def __init__(self):$/;"	m	class:DocumentState
+__init__	util.py	/^  def __init__(self):$/;"	m	class:RetrievalEvaluator
+__init__	util.py	/^  def __init__(self, num_units, batch_size, dropout):$/;"	m	class:CustomLSTMCell
+_block_orthonormal_initializer	util.py	/^  def _block_orthonormal_initializer(self, output_sizes):$/;"	m	class:CustomLSTMCell
+_enqueue_loop	coref_model.py	/^      def _enqueue_loop():$/;"	f	function:CorefModel.start_enqueue_thread
+_initializer	util.py	/^    def _initializer(shape, dtype=np.float32, partition_info=None):$/;"	f	function:CustomLSTMCell._block_orthonormal_initializer
+_initializer	util.py	/^    def _initializer(shape, dtype=tf.float32, partition_info=None):$/;"	f	function:CustomLSTMCell._orthonormal_initializer
+_k_to_tag	coref_model.py	/^    def _k_to_tag(k):$/;"	f	function:CorefModel.evaluate
+_max_width	coref_kernels.cc	/^  int _max_width;$/;"	m	class:SpansOp	file:
+_orthonormal_initializer	util.py	/^  def _orthonormal_initializer(self, scale=1.0):$/;"	m	class:CustomLSTMCell
+accumulated_loss	singleton.py	/^        accumulated_loss = 0.0$/;"	v
+accumulated_loss	singleton.py	/^    accumulated_loss = 0.0$/;"	v
+accumulated_loss	worker.py	/^        accumulated_loss = 0.0$/;"	v
+accumulated_loss	worker.py	/^    accumulated_loss = 0.0$/;"	v
+all_antecedent_scores	test_ensemble.py	/^    all_antecedent_scores = collections.defaultdict(list)$/;"	v
+all_mention_scores	test_ensemble.py	/^    all_mention_scores = collections.defaultdict(list)$/;"	v
+antecedent_scores	test_ensemble.py	/^      antecedent_scores = mean_antecedent_scores[doc_key]$/;"	v
+antecedents	coref_ops.py	/^antecedents = coref_op_library.antecedents$/;"	v
+antecedents	test_ensemble.py	/^      antecedents = antecedents_dict[doc_key]$/;"	v
+antecedents_dict	test_ensemble.py	/^    antecedents_dict = {}$/;"	v
+assert_empty	minimize.py	/^  def assert_empty(self):$/;"	m	class:DocumentState
+assert_finalizable	minimize.py	/^  def assert_finalizable(self):$/;"	m	class:DocumentState
+average_f	test_ensemble.py	/^  average_f = sum(results["f"] for results in conll_results.values()) \/ len(conll_results)$/;"	v
+average_loss	singleton.py	/^        average_loss = accumulated_loss \/ report_frequency$/;"	v
+average_loss	worker.py	/^        average_loss = accumulated_loss \/ report_frequency$/;"	v
+average_p	test_ensemble.py	/^  average_p = sum(results["p"] for results in conll_results.values()) \/ len(conll_results)$/;"	v
+average_r	test_ensemble.py	/^  average_r = sum(results["r"] for results in conll_results.values()) \/ len(conll_results)$/;"	v
+b_cubed	metrics.py	/^def b_cubed(clusters, mention_to_gold):$/;"	f
+ceafe	metrics.py	/^def ceafe(clusters, gold_clusters):$/;"	f
+checkpoint_path	decoder.py	/^    checkpoint_path = os.path.join(log_dir, "model.max.ckpt")$/;"	v
+checkpoint_path	demo.py	/^    checkpoint_path = os.path.join(log_dir, "model.max.ckpt")$/;"	v
+checkpoint_path	entity_linking.py	/^    checkpoint_path = os.path.join(log_dir, "model.max.ckpt")$/;"	v
+checkpoint_path	test_ensemble.py	/^      checkpoint_path = os.path.join(log_dir, "model.max.ckpt")$/;"	v
+checkpoint_path	test_single.py	/^    checkpoint_path = os.path.join(log_dir, "model.max.ckpt")$/;"	v
+ckpt	worker.py	/^      ckpt = tf.train.get_checkpoint_state(config["pretrained_dir"])$/;"	v
+cluster	parameter_server.py	/^  cluster = tf.train.ClusterSpec(cluster_config["addresses"])$/;"	v
+cluster	worker.py	/^  cluster = tf.train.ClusterSpec(cluster_config["addresses"])$/;"	v
+cluster_config	launch.py	/^  cluster_config = util.get_config("experiments.conf")[exp_name]["cluster"]$/;"	v
+cluster_config	parameter_server.py	/^  cluster_config = util.get_config("experiments.conf")[name]["cluster"]$/;"	v
+cluster_config	worker.py	/^  cluster_config = config["cluster"]$/;"	v
+cnn	util.py	/^def cnn(inputs, filter_sizes, num_filters):$/;"	f
+config	decoder.py	/^  config = util.get_config("experiments.conf")[name]$/;"	v
+config	demo.py	/^  config = util.get_config("experiments.conf")[name]$/;"	v
+config	entity_linking.py	/^  config = util.get_config("experiments.conf")[name]$/;"	v
+config	singleton.py	/^  config = util.get_config("experiments.conf")[name]$/;"	v
+config	test_ensemble.py	/^      config = configs[name]$/;"	v
+config	test_single.py	/^  config = util.get_config("experiments.conf")[name]$/;"	v
+config	worker.py	/^  config = util.get_config("experiments.conf")[name]$/;"	v
+configs	test_ensemble.py	/^  configs = util.get_config("experiments.conf")$/;"	v
+conll	conll.py	1;"	F
+conll_results	test_ensemble.py	/^  conll_results = conll.evaluate_conll(main_config["conll_eval_path"], merged_predictions, official_stdout=True)$/;"	v
+copy_checkpoint	evaluator.py	/^def copy_checkpoint(source, target):$/;"	f
+coref_evaluator	test_ensemble.py	/^    coref_evaluator = metrics.CorefEvaluator()$/;"	v
+coref_kernels	coref_kernels.cc	1;"	F
+coref_op_library	coref_ops.py	/^coref_op_library = tf.load_op_library(".\/coref_kernels.so")$/;"	v
+coref_ops	coref_ops.py	1;"	F
+create_example	demo.py	/^def create_example(text):$/;"	f
+decoder	decoder.py	1;"	F
+demo	demo.py	1;"	F
+deploy	html/deploy.sh	1;"	F
+distance_bins	coref_ops.py	/^distance_bins = coref_op_library.distance_bins$/;"	v
+do_POST	demo.py	/^  def do_POST(self):$/;"	m	class:CorefRequestHandler
+doc_key	test_ensemble.py	/^        doc_key = example["doc_key"]$/;"	v
+doc_key	test_ensemble.py	/^      doc_key = example["doc_key"]$/;"	v
+encode_sentences	coref_model.py	/^  def encode_sentences(self, text_emb, text_len, text_len_mask):$/;"	m	class:CorefModel
+evaluate	coref_model.py	/^  def evaluate(self, session, official_stdout=False):$/;"	m	class:CorefModel
+evaluate_conll	conll.py	/^def evaluate_conll(gold_path, predictions, official_stdout=False):$/;"	f
+evaluate_coref	coref_model.py	/^  def evaluate_coref(self, mention_starts, mention_ends, predicted_antecedents, gold_clusters, evaluator):$/;"	m	class:CorefModel
+evaluate_documents	metrics.py	/^def evaluate_documents(documents, metric, beta=1):$/;"	f
+evaluate_mentions	coref_model.py	/^  def evaluate_mentions(self, candidate_starts, candidate_ends, mention_starts, mention_ends, mention_scores, gold_starts, gold_ends, example, evaluators):$/;"	m	class:CorefModel
+evaluator	evaluator.py	1;"	F
+exp_name	launch.py	/^  exp_name = sys.argv[1]$/;"	v
+extract_mentions	coref_ops.py	/^extract_mentions = coref_op_library.extract_mentions$/;"	v
+f1	metrics.py	/^def f1(p_num, p_den, r_num, r_den, beta=1):$/;"	f
+feed_dict	decoder.py	/^        feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}$/;"	v
+feed_dict	test_ensemble.py	/^        feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}$/;"	v
+ffnn	util.py	/^def ffnn(inputs, num_hidden_layers, hidden_size, output_size, dropout, output_weights_initializer=None):$/;"	f
+filter_embeddings	filter_embeddings.py	1;"	F
+finalize	minimize.py	/^  def finalize(self):$/;"	m	class:DocumentState
+flatten	util.py	/^def flatten(l):$/;"	f
+flatten_emb_by_sentence	coref_model.py	/^  def flatten_emb_by_sentence(self, emb, text_len_mask):$/;"	m	class:CorefModel
+form	html/query.cgi	/^form = cgi.FieldStorage()$/;"	v
+generate_mention_emb	entity_linking.py	/^def generate_mention_emb(model, session): $/;"	f
+get_antecedent_scores	coref_model.py	/^  def get_antecedent_scores(self, mention_emb, mention_scores, antecedents, antecedents_len, mention_starts, mention_ends, mention_speaker_ids, genre_emb):$/;"	m	class:CorefModel
+get_bin	coref_kernels.cc	/^  int get_bin(int d) {$/;"	f	class:DistanceBinsOp	file:
+get_char_vocab	get_char_vocab.py	/^def get_char_vocab(input_filenames, output_filename):$/;"	f
+get_char_vocab	get_char_vocab.py	1;"	F
+get_char_vocab_language	get_char_vocab.py	/^def get_char_vocab_language(language):$/;"	f
+get_config	util.py	/^def get_config(filename):$/;"	f
+get_counts	metrics.py	/^    def get_counts(self):$/;"	m	class:Evaluator
+get_doc_key	conll.py	/^def get_doc_key(doc_id, part):$/;"	f
+get_f1	metrics.py	/^    def get_f1(self):$/;"	m	class:CorefEvaluator
+get_f1	metrics.py	/^    def get_f1(self):$/;"	m	class:Evaluator
+get_mention_emb	coref_model.py	/^  def get_mention_emb(self, text_emb, text_outputs, mention_starts, mention_ends):$/;"	m	class:CorefModel
+get_mention_scores	coref_model.py	/^  def get_mention_scores(self, mention_emb):$/;"	m	class:CorefModel
+get_param	viz/main.js	/^function get_param(name) {$/;"	f
+get_precision	metrics.py	/^    def get_precision(self):$/;"	m	class:CorefEvaluator
+get_precision	metrics.py	/^    def get_precision(self):$/;"	m	class:Evaluator
+get_predicted_antecedents	coref_model.py	/^  def get_predicted_antecedents(self, antecedents, antecedent_scores):$/;"	m	class:CorefModel
+get_predicted_clusters	coref_model.py	/^  def get_predicted_clusters(self, mention_starts, mention_ends, predicted_antecedents):$/;"	m	class:CorefModel
+get_predictions_and_loss	coref_model.py	/^  def get_predictions_and_loss(self, word_emb, char_index, text_len, speaker_ids, genre, is_training, gold_starts, gold_ends, cluster_ids):$/;"	m	class:CorefModel
+get_prf	metrics.py	/^    def get_prf(self):$/;"	m	class:CorefEvaluator
+get_prf	metrics.py	/^    def get_prf(self):$/;"	m	class:Evaluator
+get_recall	metrics.py	/^    def get_recall(self):$/;"	m	class:CorefEvaluator
+get_recall	metrics.py	/^    def get_recall(self):$/;"	m	class:Evaluator
+global_step	singleton.py	/^                           global_step=model.global_step,$/;"	v
+global_step	worker.py	/^                           global_step=model.global_step,$/;"	v
+handle_line	minimize.py	/^def handle_line(line, document_state):$/;"	f
+index	docs/index.html	1;"	F
+index	html/index.html	1;"	F
+index	viz/index.html	1;"	F
+init_op	singleton.py	/^                           init_op=init_op,$/;"	v
+init_op	singleton.py	/^  init_op = tf.global_variables_initializer()$/;"	v
+init_op	worker.py	/^                           init_op=init_op,$/;"	v
+init_op	worker.py	/^    init_op = tf.global_variables_initializer()$/;"	v
+initial_state	util.py	/^  def initial_state(self):$/;"	m	class:CustomLSTMCell
+initial_time	singleton.py	/^    initial_time = time.time()$/;"	v
+initial_time	worker.py	/^    initial_time = time.time()$/;"	v
+is_chief	worker.py	/^  is_chief = (task_index == 0)$/;"	v
+is_crossing	coref_kernels.cc	/^  bool is_crossing(TTypes<int32>::ConstVec &candidate_starts, TTypes<int32>::ConstVec &candidate_ends, int i1, int i2) {$/;"	f	class:ExtractMentionsOp	file:
+job_name	worker.py	/^                           job_name="worker",$/;"	v
+kept_lines	filter_embeddings.py	/^    kept_lines = 0$/;"	v
+launch	launch.py	1;"	F
+lea	metrics.py	/^def lea(clusters, mention_to_gold):$/;"	f
+load_char_dict	util.py	/^def load_char_dict(char_vocab_path):$/;"	f
+load_embedding_dict	util.py	/^def load_embedding_dict(embedding_path, embedding_size, embedding_format):$/;"	f
+load_eval_data	coref_model.py	/^  def load_eval_data(self):$/;"	m	class:CorefModel
+load_example	viz/main.js	/^function load_example(lines) {$/;"	f
+log_dir	decoder.py	/^  log_dir = config["log_dir"]$/;"	v
+log_dir	demo.py	/^  log_dir = config["log_dir"]$/;"	v
+log_dir	entity_linking.py	/^  log_dir = config["log_dir"]$/;"	v
+log_dir	singleton.py	/^  log_dir = config["log_dir"]$/;"	v
+log_dir	test_ensemble.py	/^      log_dir = os.path.join(config["log_root"], name)$/;"	v
+log_dir	test_single.py	/^  log_dir = config["log_dir"]$/;"	v
+log_dir	worker.py	/^  log_dir = config["log_dir"]$/;"	v
+logdir	worker.py	/^                           logdir=log_dir,$/;"	v
+logsumexp	html/main.js	/^function logsumexp(x) {$/;"	f
+logsumexp	viz/main.js	/^function logsumexp(x) {$/;"	f
+main	html/main.js	1;"	F
+main	viz/main.js	1;"	F
+main_config	test_ensemble.py	/^  main_config = configs[names[0]]$/;"	v
+make_predictions	demo.py	/^def make_predictions(text, model):$/;"	f
+make_summary	util.py	/^def make_summary(value_dict):$/;"	f
+maybe_divide	util.py	/^def maybe_divide(x, y):$/;"	f
+mean_antecedent_scores	test_ensemble.py	/^    mean_antecedent_scores = { doc_key : np.mean(s, 0) for doc_key, s in all_antecedent_scores.items() }$/;"	v
+mean_mention_scores	test_ensemble.py	/^    mean_mention_scores = { doc_key : np.mean(s, 0) for doc_key, s in all_mention_scores.items() }$/;"	v
+mention_end_dict	test_ensemble.py	/^    mention_end_dict = {}$/;"	v
+mention_ends	test_ensemble.py	/^      mention_ends = mention_end_dict[doc_key]$/;"	v
+mention_scores	test_ensemble.py	/^        mention_scores = session.run(model.predictions[2], feed_dict=feed_dict)$/;"	v
+mention_start_dict	test_ensemble.py	/^    mention_start_dict = {}$/;"	v
+mention_starts	test_ensemble.py	/^      mention_starts = mention_start_dict[doc_key]$/;"	v
+merged_predictions	test_ensemble.py	/^    merged_predictions = {}$/;"	v
+metrics	metrics.py	1;"	F
+metrics	util.py	/^  def metrics(self):$/;"	m	class:RetrievalEvaluator
+minimize	minimize.py	1;"	F
+minimize_language	minimize.py	/^def minimize_language(language):$/;"	f
+minimize_partition	minimize.py	/^def minimize_partition(name, language, extension):$/;"	f
+mkdirs	util.py	/^def mkdirs(path):$/;"	f
+model	decoder.py	/^  model = cm.CorefModel(config)$/;"	v
+model	demo.py	/^  model = None$/;"	v	class:CorefRequestHandler
+model	demo.py	/^  model = cm.CorefModel(config)$/;"	v
+model	entity_linking.py	/^  model = cm.CorefModel(config)$/;"	v
+model	singleton.py	/^  model = cm.CorefModel(config)$/;"	v
+model	test_ensemble.py	/^  model = cm.CorefModel(main_config)$/;"	v
+model	test_single.py	/^  model = cm.CorefModel(config)$/;"	v
+model	worker.py	/^    model = cm.CorefModel(config)$/;"	v
+muc	metrics.py	/^def muc(clusters, mention_to_gold):$/;"	f
+name	decoder.py	/^  name = sys.argv[1]$/;"	v
+name	demo.py	/^  name = sys.argv[1]$/;"	v
+name	entity_linking.py	/^    name = os.environ["EXP"]$/;"	v
+name	entity_linking.py	/^    name = sys.argv[1]$/;"	v
+name	parameter_server.py	/^    name = os.environ["EXP"]$/;"	v
+name	parameter_server.py	/^    name = sys.argv[1]$/;"	v
+name	singleton.py	/^    name = os.environ["EXP"]$/;"	v
+name	singleton.py	/^    name = sys.argv[1]$/;"	v
+name	test_single.py	/^    name = os.environ["EXP"]$/;"	v
+name	test_single.py	/^    name = sys.argv[1]$/;"	v
+name	worker.py	/^    name = os.environ["EXP"]$/;"	v
+name	worker.py	/^    name = sys.argv[1]$/;"	v
+names	test_ensemble.py	/^  names = sys.argv[1:]$/;"	v
+normalize	util.py	/^def normalize(v):$/;"	f
+normalize_word	minimize.py	/^def normalize_word(word):$/;"	f
+official_conll_eval	conll.py	/^def official_conll_eval(gold_path, predicted_path, metric, official_stdout=False):$/;"	f
+out_filename	filter_embeddings.py	/^    out_filename = "{}.filtered".format(sys.argv[1])$/;"	v
+output_conll	conll.py	/^def output_conll(input_file, output_file, predictions):$/;"	f
+output_filename	decoder.py	/^  output_filename = sys.argv[2]$/;"	v
+output_size	util.py	/^  def output_size(self):$/;"	m	class:CustomLSTMCell
+parameter_server	parameter_server.py	1;"	F
+phi4	metrics.py	/^def phi4(c1, c2):$/;"	f
+port	demo.py	/^    port = None$/;"	v
+port	demo.py	/^    port = int(sys.argv[2])$/;"	v
+precision	util.py	/^  def precision(self):$/;"	m	class:RetrievalEvaluator
+predicted_antecedents	decoder.py	/^        predicted_antecedents = model.get_predicted_antecedents(antecedents, antecedent_scores)$/;"	v
+predicted_antecedents	test_ensemble.py	/^      predicted_antecedents = []$/;"	v
+preprocess_input	util.py	/^  def preprocess_input(self, inputs):$/;"	m	class:CustomLSTMCell
+print_config	util.py	/^def print_config(config):$/;"	f
+print_error	html/query.cgi	/^def print_error(errno, message):$/;"	f
+print_header	html/query.cgi	/^def print_header():$/;"	f
+print_predictions	demo.py	/^def print_predictions(example):$/;"	f
+projection	util.py	/^def projection(inputs, output_size, initializer=None):$/;"	f
+query	html/query.cgi	1;"	F
+recall	util.py	/^  def recall(self):$/;"	m	class:RetrievalEvaluator
+render_predicted_clusters	html/main.js	/^function render_predicted_clusters(clusters_div, clusters_data, text, head_scores) {$/;"	f
+render_predicted_clusters	viz/main.js	/^function render_predicted_clusters(clusters_div, clusters_data, text, head_scores) {$/;"	f
+render_top_spans	html/main.js	/^function render_top_spans(top_spans_div, top_spans_data, text, head_scores) {$/;"	f
+render_top_spans	viz/main.js	/^function render_top_spans(top_spans_div, top_spans_data, text, head_scores) {$/;"	f
+report_frequency	singleton.py	/^  report_frequency = config["report_frequency"]$/;"	v
+report_frequency	worker.py	/^  report_frequency = config["report_frequency"]$/;"	v
+run	viz/run.sh	1;"	F
+save_model_secs	singleton.py	/^                           save_model_secs=120)$/;"	v
+save_model_secs	worker.py	/^                           save_model_secs=120)$/;"	v
+saver	decoder.py	/^  saver = tf.train.Saver()$/;"	v
+saver	demo.py	/^  saver = tf.train.Saver()$/;"	v
+saver	entity_linking.py	/^  saver = tf.train.Saver()$/;"	v
+saver	singleton.py	/^                           saver=saver,$/;"	v
+saver	singleton.py	/^  saver = tf.train.Saver()$/;"	v
+saver	test_ensemble.py	/^  saver = tf.train.Saver()$/;"	v
+saver	test_single.py	/^  saver = tf.train.Saver()$/;"	v
+saver	worker.py	/^                           saver=saver,$/;"	v
+saver	worker.py	/^    saver = tf.train.Saver()$/;"	v
+screen	launch.py	/^def screen(py_script, name, args):$/;"	f
+server	demo.py	/^      server = HTTPServer(("", port), CorefRequestHandler)$/;"	v
+server	parameter_server.py	/^  server = tf.train.Server(cluster, job_name="ps", task_index=0)$/;"	v
+server	worker.py	/^  server = tf.train.Server(cluster,$/;"	v
+set_gpus	util.py	/^def set_gpus(*gpus):$/;"	f
+set_mention_callbacks	html/main.js	/^function set_mention_callbacks(hover_callbacks, unhover_callbacks, head_scores, mention_start, mention_end) {$/;"	f
+set_mention_callbacks	viz/main.js	/^function set_mention_callbacks(hover_callbacks, unhover_callbacks, head_scores, mention_start, mention_end) {$/;"	f
+setup_all	setup_all.sh	1;"	F
+setup_pretrained	setup_pretrained.sh	1;"	F
+setup_training	setup_training.sh	1;"	F
+shape	util.py	/^def shape(x, dim):$/;"	f
+singleton	singleton.py	1;"	F
+softmax_loss	coref_model.py	/^  def softmax_loss(self, antecedent_scores, antecedent_labels):$/;"	m	class:CorefModel
+spans	coref_ops.py	/^spans = coref_op_library.spans$/;"	v
+start_enqueue_thread	coref_model.py	/^  def start_enqueue_thread(self, session):$/;"	m	class:CorefModel
+state_size	util.py	/^  def state_size(self):$/;"	m	class:CustomLSTMCell
+steps_per_second	singleton.py	/^        steps_per_second = tf_global_step \/ total_time$/;"	v
+steps_per_second	worker.py	/^        steps_per_second = tf_global_step \/ total_time$/;"	v
+sv	singleton.py	/^  sv = tf.train.Supervisor(logdir=log_dir,$/;"	v
+sv	worker.py	/^  sv = tf.train.Supervisor(is_chief=is_chief,$/;"	v
+task_index	worker.py	/^                           task_index=task_index)$/;"	v
+task_index	worker.py	/^    task_index = os.environ["TASK"]$/;"	v
+task_index	worker.py	/^    task_index = sys.argv[2]$/;"	v
+task_index	worker.py	/^  task_index = int(task_index)$/;"	v
+tensorize_example	coref_model.py	/^  def tensorize_example(self, example, is_training, oov_counts=None):$/;"	m	class:CorefModel
+tensorize_mentions	coref_model.py	/^  def tensorize_mentions(self, mentions):$/;"	m	class:CorefModel
+test_ensemble	test_ensemble.py	1;"	F
+test_single	test_single.py	1;"	F
+text	demo.py	/^        text = raw_input("Document text: ")$/;"	v
+text	html/query.cgi	/^text = form.getvalue("text")$/;"	v
+total_lines	filter_embeddings.py	/^    total_lines = 0$/;"	v
+total_time	singleton.py	/^        total_time = time.time() - initial_time$/;"	v
+total_time	worker.py	/^        total_time = time.time() - initial_time$/;"	v
+truncate_example	coref_model.py	/^  def truncate_example(self, word_emb, char_index, text_len, speaker_ids, genre, is_training, gold_starts, gold_ends, cluster_ids):$/;"	m	class:CorefModel
+update	metrics.py	/^    def update(self, predicted, gold, mention_to_predicted, mention_to_gold):$/;"	m	class:CorefEvaluator
+update	metrics.py	/^    def update(self, predicted, gold, mention_to_predicted, mention_to_gold):$/;"	m	class:Evaluator
+update	util.py	/^  def update(self, gold_set, predicted_set):$/;"	m	class:RetrievalEvaluator
+util	util.py	1;"	F
+word	filter_embeddings.py	/^                word = line.split()[0]$/;"	v
+words_to_keep	filter_embeddings.py	/^    words_to_keep = set()$/;"	v
+worker	worker.py	1;"	F
+writer	singleton.py	/^  writer = tf.summary.FileWriter(os.path.join(log_dir, "train"), flush_secs=20)$/;"	v
+writer	worker.py	/^  writer = tf.summary.FileWriter(os.path.join(log_dir, "w{}".format(task_index)), flush_secs=20)$/;"	v

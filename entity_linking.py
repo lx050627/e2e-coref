@@ -1,58 +1,40 @@
 #!/usr/bin/env python
 
 import os
+import re
 import sys
+sys.path.append(os.getcwd())
 import time
-import json
+import random
+
 import numpy as np
-
-import cgi
-from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
-import ssl
-
 import tensorflow as tf
 import coref_model as cm
 import util
 
-import nltk
-nltk.download("punkt")
-from nltk.tokenize import sent_tokenize, word_tokenize
-
-def create_example(text):
-  raw_sentences = sent_tokenize(text)
-  sentences = [word_tokenize(s) for s in raw_sentences]
-  speakers = [["" for _ in sentence] for sentence in sentences]
-  return {
-    "doc_key": "nw",
-    "clusters": [],
-    "sentences": sentences,
-    "speakers": speakers,
-  }
-
-def print_predictions(example):
-  words = util.flatten(example["sentences"])
-  for cluster in example["predicted_clusters"]:
-    print(u"Predicted cluster: {}".format([" ".join(words[m[0]:m[1]+1]) for m in cluster]))
-
-def make_predictions(text, model):
-  example = create_example(text)
-  tensorized_example = model.tensorize_example(example, is_training=False)
-  feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}
-  _, _, _, mention_starts, mention_ends, antecedents, antecedent_scores, head_scores = session.run(model.predictions + [model.head_scores], feed_dict=feed_dict)
-
-  predicted_antecedents = model.get_predicted_antecedents(antecedents, antecedent_scores)
-
-  example["predicted_clusters"], _ = model.get_predicted_clusters(mention_starts, mention_ends, predicted_antecedents)
-  example["top_spans"] = zip((int(i) for i in mention_starts), (int(i) for i in mention_ends))
-  example["head_scores"] = head_scores.tolist()
-  return example
+def generate_mention_emb(model, session): 
+  # model.load_eval_data()
+  # for example_num, (tensorized_example, example) in enumerate(model.eval_data):
+  model.load_train_data()
+  for example_num, (tensorized_example, example) in enumerate(model.train_data):
+    _, _, _, _, _, _, gold_starts, gold_ends, _ = tensorized_example
+    feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}
+  mention_starts, mention_ends, mention_emb = session.run([model.mention_starts, model.mention_ends, model.mention_emb], feed_dict=feed_dict)
+  return mention_starts, mention_ends, mention_emb
 
 if __name__ == "__main__":
-  util.set_gpus()
+  if "GPU" in os.environ:
+    util.set_gpus(int(os.environ["GPU"]))
+  else:
+    util.set_gpus()
 
-  name = sys.argv[1]
+  if len(sys.argv) > 1:
+    name = sys.argv[1]
+    print "Running experiment: {} (from command-line argument).".format(name)
+  else:
+    name = os.environ["EXP"]
+    print "Running experiment: {} (from environment variable).".format(name)
 
-  print "Running experiment: {}.".format(name)
   config = util.get_config("experiments.conf")[name]
   config["log_dir"] = util.mkdirs(os.path.join(config["log_root"], name))
 
@@ -64,8 +46,7 @@ if __name__ == "__main__":
 
   with tf.Session() as session:
     checkpoint_path = os.path.join(log_dir, "model.max.ckpt")
+    print "Evaluating {}".format(checkpoint_path)
     saver.restore(session, checkpoint_path)
-
-    while True:
-      text = raw_input("Document text: ")
-      print_predictions(make_predictions(text, model))
+    mention_starts, mention_ends, mention_emb = generate_mention_emb(model, session)
+    print(mention_starts, mention_ends, mention_emb)
