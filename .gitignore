@@ -6,8 +6,3 @@ conll-2012
 *.txt.filtered
 *.v*_*_conll
 *.zip
-
-logs
-!logs/best
-logs/best
-!logs/best/*.max.*
