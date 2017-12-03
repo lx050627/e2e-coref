@@ -10,4 +10,4 @@ conll-2012
 logs
 !logs/best
 logs/best
-!logs/best/model.max.ckpt
+!logs/best/*.max.*
