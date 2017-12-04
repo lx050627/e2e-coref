@@ -9,23 +9,6 @@ import random
 
 import numpy as np
 import tensorflow as tf
-import coref_model as cm
-import util
-
-def generate_mention_emb(model, session): 
-  # model.load_eval_data()
-  # for example_num, (tensorized_example, example) in enumerate(model.eval_data):
-  model.load_train_data()
-  for example_num, (tensorized_example, example) in enumerate(model.train_data):
-    _, _, _, _, _, _, gold_starts, gold_ends, _ = tensorized_example
-    feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}
-
-  _, _, _, mention_starts, mention_ends, antecedents, antecedent_scores, mention_emb = \
-          session.run(model.predictions + [model.mention_emb], feed_dict=feed_dict)
-  predicted_antecedents = model.get_predicted_antecedents(antecedents, antecedent_scores)
-  clusters, _ = model.get_predicted_clusters(mention_starts, mention_ends, predicted_antecedents)
-
-  return mention_starts, mention_ends, mention_emb, clusters
 
 if __name__ == "__main__":
   if "GPU" in os.environ:

@@ -7,3 +7,4 @@ conll-2012
 *.v*_*_conll
 *.zip
 *.DS_Store
+*.tags

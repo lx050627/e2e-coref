@@ -20,14 +20,10 @@ def generate_mention_emb(model, session):
     _, _, _, _, _, _, gold_starts, gold_ends, _ = tensorized_example
     feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}
 
-  _, _, _, mention_starts, mention_ends, antecedents, antecedent_scores, mention_emb = \
-          session.run(model.predictions + [model.mention_emb], feed_dict=feed_dict)
-  predicted_antecedents = model.get_predicted_antecedents(antecedents, antecedent_scores)
-  clusters, _ = model.get_predicted_clusters(mention_starts, mention_ends, predicted_antecedents)
+  mention_emb = session.run(model.candidate_mention_emb, feed_dict=feed_dict)
+  return mention_emb
 
-  return mention_starts, mention_ends, mention_emb, clusters
-
-if __name__ == "__main__":
+if __name__ == "__main__": 
   if "GPU" in os.environ:
     util.set_gpus(int(os.environ["GPU"]))
   else:
@@ -54,5 +50,16 @@ if __name__ == "__main__":
     print "Evaluating {}".format(checkpoint_path)
     saver.restore(session, checkpoint_path)
 
-    mention_starts, mention_ends, mention_emb, clusters = generate_mention_emb(model, session)
-    print(mention_starts, mention_ends, mention_emb, clusters)
+    mention_emb = generate_mention_emb(model, session)
+    print(mention_emb[0])
+    print(mention_emb.shape)
+
+    # dataset_dic = {}
+    # for n in range(0,len(mention_starts)):
+      # dataset_dic[(mention_starts[n], mention_ends[n])] = mention_emb[n]
+
+    # clusters_emb = []
+    # for cluster in clusters:
+      # cluster_emb = [dataset_dic[mention] for mention in cluster]
+      # clusters_emb.append(cluster_emb)
+    # clusters_emb = np.array(clusters_emb)

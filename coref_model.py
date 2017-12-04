@@ -198,9 +198,7 @@ class CorefModel(object):
     mention_scores = tf.gather(candidate_mention_scores, predicted_mention_indices) # [num_mentions]
 
     ###### FOR ENTITY LINKING
-    self.mention_starts = mention_starts
-    self.mention_ends = mention_ends
-    self.mention_emb = mention_emb
+    self.candidate_mention_emb = candidate_mention_emb
     ######
 
     mention_start_emb = tf.gather(text_outputs, mention_starts) # [num_mentions, emb]
