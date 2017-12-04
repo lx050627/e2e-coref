@@ -17,7 +17,6 @@ def generate_mention_emb(model, session):
   # for example_num, (tensorized_example, example) in enumerate(model.eval_data):
   model.load_train_data()
   for example_num, (tensorized_example, example) in enumerate(model.train_data):
-    _, _, _, _, _, _, gold_starts, gold_ends, _ = tensorized_example
     feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}
 
   mention_starts, mention_ends, mention_emb = \
