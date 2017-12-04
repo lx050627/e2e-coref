@@ -12,27 +12,30 @@ import tensorflow as tf
 from sklearn.metrics import accuracy_score
 
 if __name__ == "__main__":
+    ### CONFIGURATION
     data_size = 50
-    dense_units = 200
+    dense_units = 100
     n_classes = 7
-
     learning_rate = 0.1
 
+    epoches = 20
+    batch_size = 10
+
+    ### DATA
     mention = np.random.rand(data_size, 1320)
     cluster_m = np.random.rand(data_size, 2, 1320, 1)
     cluster_p = np.random.rand(data_size, 2, 1320, 1)
 
-    target = np.random.randint(0, n_classes, data_size)
+    y_true = np.random.randint(0, n_classes, data_size)
     labels = np.zeros((data_size, n_classes))
-    labels[np.arange(data_size), target] = 1
+    labels[np.arange(data_size), y_true] = 1
 
+    ### NETWORK GRAPH
     x_mention = tf.placeholder(tf.float32, shape=[None, 1320])
     x_cluster_m = tf.placeholder(tf.float32, shape=[None, 2, 1320, 1])
     x_cluster_p = tf.placeholder(tf.float32, shape=[None, 2, 1320, 1])
-    y_labels = tf.placeholder(tf.int32, shape=[None, 7])
+    y_labels = tf.placeholder(tf.int32, shape=[None, n_classes])
 
-    # NETWORK GRAPH
-    # Convolution Layer with 32 filters and a kernel size of 5
     conv_m = tf.layers.conv2d(x_cluster_m, 1, 2, activation=tf.tanh)
     conv_p = tf.layers.conv2d(x_cluster_p, 1, 2, activation=tf.tanh)
 
@@ -44,15 +47,12 @@ if __name__ == "__main__":
     fc1 = tf.nn.relu(fc1)
     output = tf.layers.dense(fc1, n_classes)
 
+    ### LOSS
     pred_probas = tf.nn.softmax(output)
     cost = tf.reduce_mean(tf.losses.softmax_cross_entropy(y_labels, pred_probas))
-    
     optimizer = tf.train.RMSPropOptimizer(learning_rate).minimize(cost)
 
-
-    # TRAINING
-    epoches = 10
-    batch_size = 10
+    ### TRAINING
     with tf.Session() as session:
         session.run(tf.initialize_all_variables())
 
@@ -71,9 +71,7 @@ if __name__ == "__main__":
             print('epoch', epoch, 'completed out of',epoches,'loss:',epoch_loss)
 
         
-        print("Accuracy:")
-        print(accuracy_score(np.argmax(labels, axis=1), np.argmax(prediction, axis=1)))
-        # correct = tf.equal(tf.argmax(prediction, 1), tf.argmax(labels, 1))
-        # accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
-        # print('accuracy:',accuracy.eval({x: mnist.test.images, y: mnist.test.labels}))
-
+        y_pred = np.argmax(prediction, axis=1)
+        print(y_pred)
+        print(y_true)
+        print("Accuracy: ", accuracy_score(y_true, y_pred))
