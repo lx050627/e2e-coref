@@ -20,8 +20,9 @@ def generate_mention_emb(model, session):
     _, _, _, _, _, _, gold_starts, gold_ends, _ = tensorized_example
     feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}
 
-  mention_emb = session.run(model.candidate_mention_emb, feed_dict=feed_dict)
-  return mention_emb
+  mention_starts, mention_ends, mention_emb = \
+          session.run([model.candidate_starts, model.candidate_ends, model.candidate_mention_emb], feed_dict=feed_dict)
+  return mention_starts, mention_ends, mention_emb
 
 if __name__ == "__main__": 
   if "GPU" in os.environ:
@@ -50,8 +51,8 @@ if __name__ == "__main__":
     print "Evaluating {}".format(checkpoint_path)
     saver.restore(session, checkpoint_path)
 
-    mention_emb = generate_mention_emb(model, session)
-    print(mention_emb[0])
+    mention_starts, mention_ends, mention_emb = generate_mention_emb(model, session)
+    print(mention_starts, mention_ends, mention_emb)
     print(mention_emb.shape)
 
     # dataset_dic = {}
