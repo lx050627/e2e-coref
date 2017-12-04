@@ -1,15 +1,18 @@
 #!/usr/bin/env python
-import os
-import re
-import sys
-sys.path.append(os.getcwd())
-import time
 import random
-
 import numpy as np
 import tensorflow as tf
-
 from sklearn.metrics import accuracy_score
+
+### CONFIGURATION
+data_size = 50
+dense_units = 100
+n_classes = 7
+learning_rate = 0.05
+dropout_rate = 0.8
+
+epoches = 20
+batch_size = 10
 
 def neural_network(input_tensors, is_training=True):
     x_mention, x_cluster_m, x_cluster_p = input_tensors
@@ -32,16 +35,6 @@ def neural_network(input_tensors, is_training=True):
     return output
 
 if __name__ == "__main__":
-    ### CONFIGURATION
-    data_size = 50
-    dense_units = 100
-    n_classes = 7
-    learning_rate = 0.05
-    dropout_rate = 0.8
-
-    epoches = 20
-    batch_size = 10
-
     ### DATA
     mention = np.random.rand(data_size, 1320)
     cluster_m = np.random.rand(data_size, 2, 1320, 1)
@@ -51,51 +44,43 @@ if __name__ == "__main__":
     labels = np.zeros((data_size, n_classes))
     labels[np.arange(data_size), y_true] = 1
 
+    input_data = [mention, cluster_m, cluster_p]
+    data = input_data + [labels]
+
     ### NETWORK GRAPH
-    # input_tensors.append(tf.placeholder(tf.float32, shape=[None, 1320])) #x_mention
-    # input_tensors.append(tf.placeholder(tf.float32, shape=[None, 2, 1320, 1])) #x_cluster_m
-    # input_tensors.append(tf.placeholder(tf.float32, shape=[None, 2, 1320, 1])) #x_cluster_p
     x_mention = tf.placeholder(tf.float32, shape=[None, 1320])
     x_cluster_m = tf.placeholder(tf.float32, shape=[None, 2, 1320, 1])
     x_cluster_p = tf.placeholder(tf.float32, shape=[None, 2, 1320, 1])
-    input_tensors = [x_mention, x_cluster_m, x_cluster_p]
-    # output_tensor = tf.placeholder(tf.float32, shape=[None, n_classes])
     y_labels = tf.placeholder(tf.float32, shape=[None, n_classes])
 
-    y_train = neural_network(input_tensors, is_training=True)
+    input_tensors = [x_mention, x_cluster_m, x_cluster_p]
+    tensors = input_tensors + [y_labels]
 
     ### LOSS
+    y_train = neural_network(input_tensors, is_training=True)
     loss = tf.reduce_mean(tf.losses.softmax_cross_entropy(y_labels, y_train))
     optimizer = tf.train.RMSPropOptimizer(learning_rate).minimize(loss)
 
     ### TRAINING
+    print("TRAINING: ")
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
         for epoch in range(epoches):
             epoch_loss = 0
             for i in range(0, data_size, batch_size):
-                feed_dict = {
-                        x_mention: mention[i:i+batch_size],
-                        x_cluster_m: cluster_m[i:i+batch_size],
-                        x_cluster_p: cluster_p[i:i+batch_size],
-                        y_labels: labels[i:i+batch_size]
-                }
+                feed_dict = dict(zip(tensors, [d[i:i+batch_size] for d in data]))
                 c, _ = sess.run([loss, optimizer], feed_dict=feed_dict)
                 epoch_loss += c
 
             print('epoch', epoch, 'completed out of',epoches,'loss:',epoch_loss)
         
     ### TESTING
+    print("\nTESTING: ")
     y_test = neural_network(input_tensors, is_training=False)
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
-
-        prediction = sess.run(y_test, feed_dict= {
-            x_mention: mention,
-            x_cluster_m: cluster_m,
-            x_cluster_p: cluster_p,
-            y_labels: labels
-        })
+        feed_dict = dict(zip(tensors, data))
+        prediction = sess.run(y_test, feed_dict=feed_dict)
 
         y_pred = np.argmax(prediction, axis=1)
         print(y_pred)
