@@ -55,9 +55,11 @@ if __name__ == "__main__":
 
     input_tensors = [x_mention, x_cluster_m, x_cluster_p]
     tensors = input_tensors + [y_labels]
+    
+    y_train = neural_network(input_tensors, is_training=True)
+    y_test = neural_network(input_tensors, is_training=False)
 
     ### LOSS
-    y_train = neural_network(input_tensors, is_training=True)
     loss = tf.reduce_mean(tf.losses.softmax_cross_entropy(y_labels, y_train))
     optimizer = tf.train.RMSPropOptimizer(learning_rate).minimize(loss)
 
@@ -71,12 +73,10 @@ if __name__ == "__main__":
                 feed_dict = dict(zip(tensors, [d[i:i+batch_size] for d in data]))
                 c, _ = sess.run([loss, optimizer], feed_dict=feed_dict)
                 epoch_loss += c
-
             print('epoch', epoch, 'completed out of',epoches,'loss:',epoch_loss)
         
     ### TESTING
     print("\nTESTING: ")
-    y_test = neural_network(input_tensors, is_training=False)
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
         feed_dict = dict(zip(tensors, data))
