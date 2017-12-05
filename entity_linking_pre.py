@@ -20,6 +20,7 @@ def get_entity_linking_data(model, session):
     mention_embs = []
     cluster_embs = []
     mention_pair_embs = []
+    entity_ids = []
     for example_num, (tensorized_example, example) in enumerate(model.train_data):
         feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}
         mention_tensors = [model.candidate_starts, model.candidate_ends, model.candidate_mention_emb] 
@@ -27,9 +28,9 @@ def get_entity_linking_data(model, session):
 
         mention_idx = zip(mention_starts, mention_ends)
         clusters = example["clusters"]
-        # cluster_ids = example["cluster_ids"]
+        cluster_ids = example["cluster_ids"]
 
-        for cluster in clusters:
+        for cluster_id, cluster in zip(cluster_ids, clusters):
             ### CLUSTER_EMB
             cluster_m_emb = []
             for start, end in cluster:
@@ -65,8 +66,9 @@ def get_entity_linking_data(model, session):
                 mention_embs.append(mention_emb_i)
                 cluster_embs.append(cluster_m_pool)
                 mention_pair_embs.append(cluster_p_pool)
+                entity_ids.append(cluster_id)
     
-    return np.array(mention_embs), np.array(cluster_embs), np.array(mention_pair_embs)
+    return np.array(mention_embs), np.array(cluster_embs), np.array(mention_pair_embs), np.array(entity_ids)
 
 if __name__ == "__main__": 
     if "GPU" in os.environ:
@@ -92,12 +94,12 @@ if __name__ == "__main__":
   
     with tf.Session() as session:
         checkpoint_path = os.path.join(log_dir, "model.max.ckpt")
-        # checkpoint_path = os.path.join(log_dir, "model.ckpt-0")
 
         print "Evaluating {}".format(checkpoint_path)
         saver.restore(session, checkpoint_path)
   
-        mention_embs, cluster_embs, mention_pair_embs = get_entity_linking_data(model, session)
+        mention_embs, cluster_embs, mention_pair_embs, entity_ids = get_entity_linking_data(model, session)
         print(mention_embs.shape)
         print(cluster_embs.shape)
         print(mention_pair_embs.shape)
+        print(entity_ids.shape)

@@ -80,19 +80,13 @@ class CorefModel(object):
 
   def tensorize_example(self, example, is_training, oov_counts=None):
     clusters = example["clusters"]
-    cluster_ids = example["cluster_ids"]
 
-    print(clusters)
     gold_mentions = sorted(tuple(m) for m in util.flatten(clusters))
     gold_mention_map = {m:i for i,m in enumerate(gold_mentions)}
-    print(gold_mention_map)
     cluster_ids = np.zeros(len(gold_mentions))
     for cluster_id, cluster in enumerate(clusters):
       for mention in cluster:
         cluster_ids[gold_mention_map[tuple(mention)]] = cluster_id
-
-    print(cluster_ids)
-    exit()
 
     sentences = example["sentences"]
     num_words = sum(len(s) for s in sentences)
