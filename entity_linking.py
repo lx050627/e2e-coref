@@ -24,11 +24,11 @@ def neural_network(input_tensors, is_training=True):
     flat_cluster_p = tf.contrib.layers.flatten(conv_p)
     concat = tf.concat([x_mention, flat_cluster_m, flat_cluster_p], 1)
 
-    fc1 = tf.layers.dropout(concat, rate=dropout_rate, training=True) 
+    fc1 = tf.layers.dropout(concat, rate=dropout_rate, training=is_training) 
     fc1 = tf.layers.dense(fc1, dense_units)
     fc1 = tf.nn.relu(fc1)
 
-    fc2 = tf.layers.dropout(fc1, rate=dropout_rate, training=True) 
+    fc2 = tf.layers.dropout(fc1, rate=dropout_rate, training=is_training) 
     fc2 = tf.layers.dense(fc2, n_classes)
     output = tf.nn.softmax(fc2)
 

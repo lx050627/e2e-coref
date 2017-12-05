@@ -146,7 +146,7 @@ def handle_line(line, document_state):
 
 def minimize_partition(name, language, extension):
   input_path = "{}.{}.{}".format(name, language, extension)
-  output_path = "el.{}.{}.jsonlines".format(name, language)
+  output_path = "{}.{}.jsonlines".format(name, language)
   count = 0
   print "Minimizing {}".format(input_path)
   with open(input_path, "r") as input_file:
@@ -163,8 +163,8 @@ def minimize_partition(name, language, extension):
 
 def minimize_language(language):
   minimize_partition("dev", language, "v4_auto_conll")
-  # minimize_partition("train", language, "v4_auto_conll")
-  # minimize_partition("test", language, "v4_gold_conll")
+  minimize_partition("train", language, "v4_auto_conll")
+  minimize_partition("test", language, "v4_gold_conll")
 
 if __name__ == "__main__":
   minimize_language("english")

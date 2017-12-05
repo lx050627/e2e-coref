@@ -27,6 +27,7 @@ def get_entity_linking_data(model, session):
 
         mention_idx = zip(mention_starts, mention_ends)
         clusters = example["clusters"]
+        # cluster_ids = example["cluster_ids"]
 
         for cluster in clusters:
             ### CLUSTER_EMB
@@ -91,6 +92,8 @@ if __name__ == "__main__":
   
     with tf.Session() as session:
         checkpoint_path = os.path.join(log_dir, "model.max.ckpt")
+        # checkpoint_path = os.path.join(log_dir, "model.ckpt-0")
+
         print "Evaluating {}".format(checkpoint_path)
         saver.restore(session, checkpoint_path)
   
