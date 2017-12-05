@@ -8,3 +8,8 @@ conll-2012
 *.zip
 *.DS_Store
 *.tags
+
+logs
+!logs/best
+logs/best
+!logs/best/*.max.*
