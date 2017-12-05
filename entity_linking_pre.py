@@ -95,3 +95,6 @@ if __name__ == "__main__":
         saver.restore(session, checkpoint_path)
   
         mention_embs, cluster_embs, mention_pair_embs = get_entity_linking_data(model, session)
+        print(mention_embs.shape)
+        print(cluster_embs.shape)
+        print(mention_pair_embs.shape)

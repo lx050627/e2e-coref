@@ -21,6 +21,9 @@ class DocumentState(object):
     self.clusters = collections.defaultdict(list)
     self.stacks = collections.defaultdict(list)
 
+    ### ENTITY LINKING
+    self.cluster_ids = collections.defaultdict(list)
+
   def assert_empty(self):
     assert self.doc_key is None
     assert len(self.text) == 0
@@ -29,6 +32,9 @@ class DocumentState(object):
     assert len(self.speakers) == 0
     assert len(self.clusters) == 0
     assert len(self.stacks) == 0
+
+    ### ENTITY LINKING
+    assert len(self.cluster_ids) == 0
 
   def assert_finalizable(self):
     assert self.doc_key is not None
@@ -58,11 +64,31 @@ class DocumentState(object):
     all_mentions = util.flatten(merged_clusters)
     assert len(all_mentions) == len(set(all_mentions))
 
+    merged_cluster_ids = []
+    for c1 in self.cluster_ids.values():
+      existing = None
+      for m in c1:
+        for c2 in merged_cluster_ids:
+          if m in c2:
+            existing = c2
+            break
+        if existing is not None:
+          break
+      if existing is not None:
+        print("Merging cluster ids (shouldn't happen very often.)")
+        existing.update(c1)
+      else:
+        merged_cluster_ids.append(set(c1))
+    merged_cluster_ids = [list(c) for c in merged_cluster_ids]
+    all_mentions = util.flatten(merged_cluster_ids)
+    assert len(all_mentions) == len(set(all_mentions))
+
     return {
       "doc_key": self.doc_key,
       "sentences": self.sentences,
       "speakers": self.speakers,
-      "clusters": merged_clusters
+      "clusters": merged_clusters,
+      "cluster_ids": merged_cluster_ids
     }
 
 def normalize_word(word):
@@ -107,6 +133,7 @@ def handle_line(line, document_state):
         if segment[-1] == ")":
           cluster_id = int(segment[1:-1])
           document_state.clusters[cluster_id].append((word_index, word_index))
+          document_state.cluster_ids[cluster_id].append(cluster_id)
         else:
           cluster_id = int(segment[1:])
           document_state.stacks[cluster_id].append(word_index)
@@ -114,11 +141,12 @@ def handle_line(line, document_state):
         cluster_id = int(segment[:-1])
         start = document_state.stacks[cluster_id].pop()
         document_state.clusters[cluster_id].append((start, word_index))
+        document_state.cluster_ids[cluster_id].append(cluster_id)
     return None
 
 def minimize_partition(name, language, extension):
   input_path = "{}.{}.{}".format(name, language, extension)
-  output_path = "{}.{}.jsonlines".format(name, language)
+  output_path = "el.{}.{}.jsonlines".format(name, language)
   count = 0
   print "Minimizing {}".format(input_path)
   with open(input_path, "r") as input_file:
@@ -135,8 +163,8 @@ def minimize_partition(name, language, extension):
 
 def minimize_language(language):
   minimize_partition("dev", language, "v4_auto_conll")
-  minimize_partition("train", language, "v4_auto_conll")
-  minimize_partition("test", language, "v4_gold_conll")
+  # minimize_partition("train", language, "v4_auto_conll")
+  # minimize_partition("test", language, "v4_gold_conll")
 
 if __name__ == "__main__":
   minimize_language("english")
