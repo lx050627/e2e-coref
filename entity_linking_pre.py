@@ -12,16 +12,15 @@ import tensorflow as tf
 import coref_model as cm
 import util
 
-def get_entity_linking_data(model, session): 
-    # model.load_eval_data()
-    # for example_num, (tensorized_example, example) in enumerate(model.eval_data):
-    model.load_train_data()
+def get_entity_linking_data(config, data, model, session): 
+    n_classes = config["el_n_classes"]
 
     mention_embs = []
     cluster_embs = []
     mention_pair_embs = []
     entity_ids = []
-    for example_num, (tensorized_example, example) in enumerate(model.train_data):
+
+    for example_num, (tensorized_example, example) in enumerate(data):
         feed_dict = {i:t for i,t in zip(model.input_tensors, tensorized_example)}
         mention_tensors = [model.candidate_starts, model.candidate_ends, model.candidate_mention_emb] 
         mention_starts, mention_ends, mention_emb = session.run(mention_tensors, feed_dict=feed_dict)
@@ -62,13 +61,23 @@ def get_entity_linking_data(model, session):
                 max_pool = np.amax(cluster_p_emb, axis=0)
                 cluster_p_pool = np.stack((avg_pool, max_pool))
 
+                # entity_id
+                entity_id = np.zeros(n_classes)
+                entity_id[cluster_id[0]] = 1
+
                 # concat features
                 mention_embs.append(mention_emb_i)
                 cluster_embs.append(cluster_m_pool)
                 mention_pair_embs.append(cluster_p_pool)
-                entity_ids.append(cluster_id)
+                entity_ids.append(entity_id)
     
-    return np.array(mention_embs), np.array(cluster_embs), np.array(mention_pair_embs), np.array(entity_ids)
+    dataset = [mention_embs, cluster_embs, mention_pair_embs, entity_ids]
+    dataset = map(np.array, dataset)
+
+    # CNN channel are only 1
+    dataset[1:3] = list(map(lambda d: d.reshape(d.shape + (1, )), dataset[1:3]))
+
+    return dataset
 
 if __name__ == "__main__": 
     if "GPU" in os.environ:
@@ -83,6 +92,7 @@ if __name__ == "__main__":
         name = os.environ["EXP"]
         print "Running experiment: {} (from environment variable).".format(name)
   
+    # CONFIGURATION
     config = util.get_config("experiments.conf")[name]
     config["log_dir"] = util.mkdirs(os.path.join(config["log_root"], name))
   
@@ -90,16 +100,31 @@ if __name__ == "__main__":
     model = cm.CorefModel(config)
   
     saver = tf.train.Saver()
+
     log_dir = config["log_dir"]
+    train_fp = os.path.join(log_dir, config["el_train_path"])
+    test_fp = os.path.join(log_dir, config["el_test_path"])
   
     with tf.Session() as session:
         checkpoint_path = os.path.join(log_dir, "model.max.ckpt")
 
         print "Evaluating {}".format(checkpoint_path)
         saver.restore(session, checkpoint_path)
-  
-        mention_embs, cluster_embs, mention_pair_embs, entity_ids = get_entity_linking_data(model, session)
-        print(mention_embs.shape)
-        print(cluster_embs.shape)
-        print(mention_pair_embs.shape)
-        print(entity_ids.shape)
+        
+        model.load_train_data()
+        model.load_eval_data()
+
+        train_data = get_entity_linking_data(config, model.train_data, model, session)
+        test_data = get_entity_linking_data(config, model.eval_data, model, session)
+
+        np.savez(train_fp, *train_data)
+        np.savez(test_fp, *test_data)
+
+        for d in test_data:
+            print(d.shape)
+
+        # mention_embs, cluster_embs, mention_pair_embs, entity_ids = test_data
+        # print(mention_embs.shape)
+        # print(cluster_embs.shape)
+        # print(mention_pair_embs.shape)
+        # print(entity_ids.shape)
