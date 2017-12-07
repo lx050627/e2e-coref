@@ -71,6 +71,12 @@ def get_entity_linking_data(config, data, model, session):
                 mention_pair_embs.append(cluster_p_pool)
                 entity_ids.append(entity_id)
     
+    # reduce labels to 6 roles and Unknown
+    # roles = ['Ross', 'Joey', 'Chandler', 'Monica', 'Phoebe', 'Rachel']
+    # ids = [335, 183, 59, 248, 292, 306]
+    # entity_ids = np.argmax(entity_ids, axis=1)
+    # entity_ids = list(map(lambda id: ids.index(id) if id in ids else 6, entity_ids))
+
     dataset = [mention_embs, cluster_embs, mention_pair_embs, entity_ids]
     dataset = map(np.array, dataset)
 
@@ -120,8 +126,8 @@ if __name__ == "__main__":
         np.savez(train_fp, *train_data)
         np.savez(test_fp, *test_data)
 
-        for d in test_data:
-            print(d.shape)
+        # for d in test_data:
+            # print(d.shape)
 
         # mention_embs, cluster_embs, mention_pair_embs, entity_ids = test_data
         # print(mention_embs.shape)
