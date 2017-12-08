@@ -12,6 +12,57 @@ import tensorflow as tf
 import coref_model as cm
 import util
 
+def neural_network(config, is_training=True):
+
+    dense_units = config["el_dense_units"]
+    dropout_rate = config["el_dropout_rate"]
+    n_classes = config["el_n_classes"]
+
+    # Placeholders
+    x_mention = tf.placeholder(tf.float32, shape=[None, 1320])
+    x_cluster_m = tf.placeholder(tf.float32, shape=[None, 2, 1320, 1])
+    x_cluster_p = tf.placeholder(tf.float32, shape=[None, 2, 1320, 1])
+    y_labels = tf.placeholder(tf.float32, shape=[None, n_classes])
+
+    input_tensors = [x_mention, x_cluster_m, x_cluster_p]
+    output_tensor = y_labels
+
+    return input_tensors, output_tensor, tf.layers.dense(x_mention, n_classes)
+
+    # Network Structure
+    conv_m = tf.layers.conv2d(x_cluster_m, 1, 2, activation=tf.tanh)
+    conv_p = tf.layers.conv2d(x_cluster_p, 1, 2, activation=tf.tanh)
+
+    flat_cluster_m = tf.contrib.layers.flatten(conv_m)
+    flat_cluster_p = tf.contrib.layers.flatten(conv_p)
+    concat = tf.concat([x_mention, flat_cluster_m, flat_cluster_p], 1)
+
+    fc1 = tf.layers.dropout(concat, rate=dropout_rate, training=is_training) 
+    fc1 = tf.layers.dense(fc1, dense_units)
+    fc1 = tf.layers.batch_normalization(fc1)
+    fc1 = tf.nn.relu(fc1)
+
+    fc2 = tf.layers.dropout(fc1, rate=dropout_rate, training=is_training) 
+    fc2 = tf.layers.dense(fc2, n_classes)
+    fc2 = tf.layers.batch_normalization(fc2)
+    output_layer = tf.nn.softmax(fc2)
+
+    return input_tensors, output_tensor, output_layer
+
+def reduce_labels(data):
+    data  = [data['arr_{}'.format(i)] for i in range(4)]
+
+    roles = ['Ross', 'Joey', 'Chandler', 'Monica', 'Phoebe', 'Rachel']
+    ids = [335, 183, 59, 248, 292, 306]
+
+    # data = list(map(lambda key: test_data[key], sorted([key for key in test_data])))
+    labels = np.argmax(data[3], axis=1)
+    labels = np.array(map(lambda id: ids.index(id) if id in ids else 6, labels))
+    one_hot = np.zeros((len(labels), 7))
+    one_hot[np.arange(len(labels)), labels] = 1
+    data[3] = one_hot
+
+    return data
 def get_entity_linking_data(config, data, model, session): 
     n_classes = config["el_n_classes"]
 
@@ -62,7 +113,7 @@ def get_entity_linking_data(config, data, model, session):
                 cluster_p_pool = np.stack((avg_pool, max_pool))
 
                 # entity_id
-                entity_id = np.zeros(n_classes)
+                entity_id = np.zeros(401)
                 entity_id[cluster_id[0]] = 1
 
                 # concat features
@@ -72,15 +123,16 @@ def get_entity_linking_data(config, data, model, session):
                 entity_ids.append(entity_id)
     
     # reduce labels to 6 roles and Unknown
-    # roles = ['Ross', 'Joey', 'Chandler', 'Monica', 'Phoebe', 'Rachel']
-    # ids = [335, 183, 59, 248, 292, 306]
-    # entity_ids = np.argmax(entity_ids, axis=1)
-    # entity_ids = list(map(lambda id: ids.index(id) if id in ids else 6, entity_ids))
+    if n_classes == 7:
+        roles = ['Ross', 'Joey', 'Chandler', 'Monica', 'Phoebe', 'Rachel']
+        ids = [335, 183, 59, 248, 292, 306]
+        entity_ids = np.argmax(entity_ids, axis=1)
+        entity_ids = list(map(lambda id: ids.index(id) if id in ids else 6, entity_ids))
 
     dataset = [mention_embs, cluster_embs, mention_pair_embs, entity_ids]
     dataset = map(np.array, dataset)
 
-    # CNN channel are only 1
+    # set CNN channel to 1
     dataset[1:3] = list(map(lambda d: d.reshape(d.shape + (1, )), dataset[1:3]))
 
     return dataset

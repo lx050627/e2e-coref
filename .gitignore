@@ -13,3 +13,4 @@ logs
 !logs/best
 logs/best
 !logs/best/*.max.*
+!logs/best/*.entity_linking.*
