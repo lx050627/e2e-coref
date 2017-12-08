@@ -9,8 +9,10 @@ conll-2012
 *.DS_Store
 *.tags
 
-logs
+/*checkpoint files*/
+!logs
+logs/*
 !logs/best
-logs/best
+logs/best/*
 !logs/best/*.max.*
 !logs/best/*.entity_linking.*
