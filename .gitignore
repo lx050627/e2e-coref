@@ -6,8 +6,10 @@ conll-2012
 *.txt.filtered
 *.v*_*_conll
 *.zip
+*.tags
+*.DS_Store
 
 logs
 !logs/best
 logs/best
-!logs/best/model.max.ckpt
+!logs/best/*.max.*
