@@ -250,7 +250,6 @@ class CorefModel(object):
     mention_emb = tf.concat(mention_emb_list, 1) # [num_mentions, emb]
     return mention_emb
 
-
   def get_mention_scores(self, mention_emb):
     with tf.variable_scope("mention_scores"):
       return util.ffnn(mention_emb, self.config["ffnn_depth"], self.config["ffnn_size"], 1, self.dropout) # [num_mentions, 1]
