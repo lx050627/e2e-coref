@@ -40,7 +40,7 @@
    Pu-Chin Chen
   {\tt \{puchinchen@ucla.edu\}} \\
   Aoxuan Li 
-  {\tt \{a811278305@gmail.com\}} \\
+  {\tt \{douglasli@cs.ucla.edu\}} \\
   Yutian Zhang
   {\tt \{yutianzh0527@gmail.com\}} \\
   Xin Liu
@@ -154,6 +154,21 @@ $CEAF_e$(Luo,2005) metric further clarifies the downside of $B^{3}$, in which en
 
 \section{Results and Analysis}
 We conducted one complete experiment and two ablation experiments, no heads and no features. The result of no features is shown in Table 1.
+
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline
+        & \multicolumn{3}{l|}{No Features} & \multicolumn{3}{l|}{No Heads} & \multicolumn{3}{l|}{Normal}   \\ \hline
+        & F1       & RECALL   & PRECISION  & F1      & RECALL  & PRECISION & F1      & RECALL  & PRECISION \\ \hline
+MUC     & 79.14\%  & 76.98\%  & 81.42\%    & 80.90\% & 80.38\% & 81.43\%   & 80.84\% & 81.64\% & 80.71\%   \\ \hline
+B3      & 60.68\%  & 55.22\%  & 67.34\%    & 64.38\% & 62.54\% & 66.34\%   & 65.39\% & 68.89\% & 62.23\%   \\ \hline
+CEAF\_e & 48.47\%  & 48.21\%  & 48.43\%    & 52.89\% & 50.54\% & 55.48\%   & 51.80\% & 53.51\% & 50.20\%   \\ \hline
+AVG     & 62.76\%  & 60.14\%  & 65.73\%    & 66.06\% & 64.49\% & 67.75\%   & 66.02\% & 68.02\% & 64.17\%   \\ \hline
+\end{tabular}
+\end{table}
 
 \section{Conclusion and Future work}
 

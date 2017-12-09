@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2017 13:50
+=======
 This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.21)  9 DEC 2017 13:36
+>>>>>>> dec53520ebe924df7f3ee6cf6198b88522abaa50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -141,17 +145,74 @@ Underfull \hbox (badness 1365) in paragraph at lines 151--153
 i-fies the
  []
 
+<<<<<<< HEAD
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 107.
+
+
+Overfull \hbox (336.46904pt too wide) in paragraph at lines 111--120
+ [][] 
+ []
+
+(./acl2016.bbl
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \end{thebibliography}
+                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+Underfull \vbox (badness 3668) has occurred while \output is active []
+
+ [2]
+Underfull \hbox (badness 2181) in paragraph at lines 162--166
+[][]\OT1/pcr/m/n/10.95 \appendix []\OT1/ptm/m/n/10.95 be-fore any ap-pendix sec
+-tion to
+=======
 No file acl2016.bbl.
 [3]
 Underfull \hbox (badness 2181) in paragraph at lines 198--202
 []\OT1/pcr/m/n/10.95 \appendix \OT1/ptm/m/n/10.95 be-fore any ap-pendix sec-tio
 n to
+>>>>>>> dec53520ebe924df7f3ee6cf6198b88522abaa50
  []
 
 [4
 
 ] (./acl2016.aux) ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
+ 541 strings out of 492995
+ 6930 string characters out of 6132704
+ 69866 words of memory out of 5000000
+ 4126 multiletter control sequences out of 15000+600000
+ 22766 words of font info for 52 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 31i,9n,23p,914b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.
+enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on acl2016.pdf (3 pages, 97029 bytes).
+PDF statistics:
+ 51 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
  538 strings out of 493706
  6967 string characters out of 6145768
  64332 words of memory out of 5000000
@@ -159,5 +220,6 @@ Here is how much of TeX's memory you used:
  12844 words of font info for 41 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  31i,9n,23p,914b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+>>>>>>> dec53520ebe924df7f3ee6cf6198b88522abaa50
 
 Output written on acl2016.pdf (4 pages).
