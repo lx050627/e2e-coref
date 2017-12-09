@@ -1,6 +1,2 @@
-model_checkpoint_path: "model.ckpt-52836"
-all_model_checkpoint_paths: "model.ckpt-52430"
-all_model_checkpoint_paths: "model.ckpt-52522"
-all_model_checkpoint_paths: "model.ckpt-52620"
-all_model_checkpoint_paths: "model.ckpt-52723"
-all_model_checkpoint_paths: "model.ckpt-52836"
+model_checkpoint_path: "model.entity_linking.ckpt"
+all_model_checkpoint_paths: "model.entity_linking.ckpt"

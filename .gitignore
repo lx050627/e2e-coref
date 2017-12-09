@@ -9,7 +9,6 @@ conll-2012
 *.DS_Store
 *.tags
 
-/*checkpoint files*/
 !logs
 logs/*
 !logs/best

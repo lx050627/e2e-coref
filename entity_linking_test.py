@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 import random
+import sys
 import os
 import numpy as np
 import tensorflow as tf
 from sklearn.metrics import confusion_matrix, accuracy_score
 
 import util
-import sys
-import entity_linking_helper as helper
+from entity_linking_helper import neural_network, reduce_labels
 
 if __name__ == "__main__":
 
@@ -16,35 +16,28 @@ if __name__ == "__main__":
         name = sys.argv[1]
         print "Running experiment: {} (from command-line argument).".format(name)
     else:
-        name = os.environ["EXP"]
-        print "Running experiment: {} (from environment variable).".format(name)
+        name = 'best'
 
     config = util.get_config("experiments.conf")[name]
     config["log_dir"] = util.mkdirs(os.path.join(config["log_root"], name))
 
     log_dir = config["log_dir"]
-    train_fp = os.path.join(log_dir, config["el_train_path"])
     test_fp = os.path.join(log_dir, config["el_test_path"])
-    n_classes = config["el_n_classes"]
-    learning_rate = config["el_learning_rate"]
-    epoches = config["el_epoches"]
-    batch_size = config["el_batch_size"]
     model_fp = os.path.join(log_dir, "model.entity_linking.ckpt")
 
     ### DATA
-    test_data = helper.reduce_labels(np.load(test_fp))
+    test_data = reduce_labels(np.load(test_fp))
 
     ### NETWORK GRAPH
 
     # If there is a built graph
     # tf.reset_default_graph()
-    input_tensors, y_labels, y_test = helper.neural_network(config, is_training=False)
+    input_tensors, y_labels, y_test = neural_network(config, is_training=False)
     tensors = input_tensors + [y_labels]
 
     # call after graph construction
     saver = tf.train.Saver()
     with tf.Session() as sess:
-        ### TESTING
         print("\nTESTING: ")
 
         saver.restore(sess, model_fp)

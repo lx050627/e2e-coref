@@ -27,8 +27,6 @@ def neural_network(config, is_training=True):
     input_tensors = [x_mention, x_cluster_m, x_cluster_p]
     output_tensor = y_labels
 
-    return input_tensors, output_tensor, tf.layers.dense(x_mention, n_classes)
-
     # Network Structure
     conv_m = tf.layers.conv2d(x_cluster_m, 1, 2, activation=tf.tanh)
     conv_p = tf.layers.conv2d(x_cluster_p, 1, 2, activation=tf.tanh)
@@ -63,6 +61,7 @@ def reduce_labels(data):
     data[3] = one_hot
 
     return data
+
 def get_entity_linking_data(config, data, model, session): 
     n_classes = config["el_n_classes"]
 
@@ -123,11 +122,11 @@ def get_entity_linking_data(config, data, model, session):
                 entity_ids.append(entity_id)
     
     # reduce labels to 6 roles and Unknown
-    if n_classes == 7:
-        roles = ['Ross', 'Joey', 'Chandler', 'Monica', 'Phoebe', 'Rachel']
-        ids = [335, 183, 59, 248, 292, 306]
-        entity_ids = np.argmax(entity_ids, axis=1)
-        entity_ids = list(map(lambda id: ids.index(id) if id in ids else 6, entity_ids))
+    # if n_classes == 7:
+        # roles = ['Ross', 'Joey', 'Chandler', 'Monica', 'Phoebe', 'Rachel']
+        # ids = [335, 183, 59, 248, 292, 306]
+        # entity_ids = np.argmax(entity_ids, axis=1)
+        # entity_ids = list(map(lambda id: ids.index(id) if id in ids else 6, entity_ids))
 
     dataset = [mention_embs, cluster_embs, mention_pair_embs, entity_ids]
     dataset = map(np.array, dataset)
@@ -147,8 +146,7 @@ if __name__ == "__main__":
         name = sys.argv[1]
         print "Running experiment: {} (from command-line argument).".format(name)
     else:
-        name = os.environ["EXP"]
-        print "Running experiment: {} (from environment variable).".format(name)
+        name = 'best'
   
     # CONFIGURATION
     config = util.get_config("experiments.conf")[name]
