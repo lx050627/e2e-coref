@@ -14,6 +14,9 @@ This repository is to accomplish a shared task in SemEval 2018 - Task 4: Charact
   * TensorFlow 1.4.0
   * pyhocon (for parsing the configurations)
   * NLTK (for sentence splitting and tokenization in the demo)
+```
+pip install -r requirements.txt
+```
 
 ### Setting Up
 
