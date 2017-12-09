@@ -1,6 +1,2 @@
-model_checkpoint_path: "model.ckpt-42895"
-all_model_checkpoint_paths: "model.ckpt-42759"
-all_model_checkpoint_paths: "model.ckpt-42783"
-all_model_checkpoint_paths: "model.ckpt-42813"
-all_model_checkpoint_paths: "model.ckpt-42855"
-all_model_checkpoint_paths: "model.ckpt-42895"
+model_checkpoint_path: "model.entity_linking.ckpt"
+all_model_checkpoint_paths: "model.entity_linking.ckpt"

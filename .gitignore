@@ -1,15 +1,17 @@
 *.pyc
 *.so
 *.jsonlines
-conll-2012
 *.txt
 *.txt.filtered
 *.v*_*_conll
 *.zip
-*.tags
 *.DS_Store
+*.tags
+conll-2012
 
-logs
+!logs
+logs/*
 !logs/best
-logs/best
+logs/best/*
 !logs/best/*.max.*
+!logs/best/*.entity_linking.*

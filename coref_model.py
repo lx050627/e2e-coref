@@ -22,6 +22,7 @@ class CorefModel(object):
     self.max_mention_width = config["max_mention_width"]
     self.genres = { g:i for i,g in enumerate(config["genres"]) }
     self.eval_data = None # Load eval data lazily.
+    self.train_data = None # Load train data lazily.
 
     input_props = []
     input_props.append((tf.float32, [None, None, self.embedding_size])) # Text embeddings.
@@ -41,6 +42,7 @@ class CorefModel(object):
     self.input_tensors = queue.dequeue()
 
     self.predictions, self.loss = self.get_predictions_and_loss(*self.input_tensors)
+
     self.global_step = tf.Variable(0, name="global_step", trainable=False)
     self.reset_global_step = tf.assign(self.global_step, 0)
     learning_rate = tf.train.exponential_decay(self.config["learning_rate"], self.global_step,
@@ -194,6 +196,12 @@ class CorefModel(object):
     mention_ends = tf.gather(candidate_ends, predicted_mention_indices) # [num_mentions]
     mention_emb = tf.gather(candidate_mention_emb, predicted_mention_indices) # [num_mentions, emb]
     mention_scores = tf.gather(candidate_mention_scores, predicted_mention_indices) # [num_mentions]
+
+    ###### FOR ENTITY LINKING
+    self.candidate_starts = candidate_starts
+    self.candidate_ends = candidate_ends 
+    self.candidate_mention_emb = candidate_mention_emb
+    ######
 
     mention_start_emb = tf.gather(text_outputs, mention_starts) # [num_mentions, emb]
     mention_end_emb = tf.gather(text_outputs, mention_ends) # [num_mentions, emb]
@@ -426,6 +434,16 @@ class CorefModel(object):
     predicted_clusters, mention_to_predicted = self.get_predicted_clusters(mention_starts, mention_ends, predicted_antecedents)
     evaluator.update(predicted_clusters, gold_clusters, mention_to_predicted, mention_to_gold)
     return predicted_clusters
+
+  def load_train_data(self):
+    if self.train_data is None:
+      oov_counts = [0 for _ in self.embedding_dicts]
+      with open(self.config["train_path"]) as f:
+        self.train_data = map(lambda example: (self.tensorize_example(example, is_training=False, oov_counts=oov_counts), example), (json.loads(jsonline) for jsonline in f.readlines()))
+      num_words = sum(tensorized_example[2].sum() for tensorized_example, _ in self.train_data)
+      for emb, c in zip(self.config["embeddings"], oov_counts):
+        print("OOV rate for {}: {:.2f}%".format(emb["path"], (100.0 * c) / num_words))
+      print("Loaded {} train examples.".format(len(self.train_data)))
 
   def load_eval_data(self):
     if self.eval_data is None:
