@@ -180,16 +180,13 @@ Another issue is that our models actually overfit. In the beginning, we used the
 
 \section{Conclusion and Future work}
 
-In this work, we implemented a character identification system by integrating the neural coreference system with a CNN based entity linking model.  
+In this work, we implemented a character identification system by integrating the neural coreference system with a CNN based entity linking model. There are many open space for improvements. We should conduct the following experiments:
 
-There are many open space for improvements. We should conduct the following experiments:
 {\bf Fortified Mention Embedding} 
+The coreference model, proposed by Lee and He, does not add speaker ids and other features util calculating antecedent scores. We can add these features earlier in mention embeddings after LSTM so as to directly utilize speaker information.   
 
 {\bf End-to-End Training}
-The original 
-
-
- Inspired by (Clark and Manning, 2016), the next step will be designing loss function proposed in their work and boost the reliability of our system using reinforcement learning.
+Another approach should be adding one layer for output entity ids after the coreference scores. The new loss function will be multiclass cross entropy. We can pre-train the coreference system and then train the entity linking part, by fixing the coreference model and optimize the loss. Inspired by (Clark and Manning, 2016), the further step will be designing loss function proposed in their work and boost the reliability of our system using reinforcement learning.
 
 \section*{Acknowledgments}
 
