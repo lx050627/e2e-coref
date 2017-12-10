@@ -55,34 +55,34 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-  Coreference resolution and entity linking are two important research topics in NLP, gaining growing attentions over years. In this project, we combined these two tasks together to accomplish a more complicated task, which is identifying the characters in multiparty dialoagues. Different from previous traditional methods of coreference resolution, a state-of-the-art end-to-end model is adoptd, which significantly outpeforms other previous work.In addition, our entity-linking model is based on CNN instead of knowledge databases. Finally,we evaluated our models using the scripts from real TV shows.The results of coreference resolution are satisfactory, but the performance of entity linking does not live up to our expections.We analyzed the possible underlying reasons, which pointing out the research direction in future work.
+  Coreference resolution and entity linking are two important research topics in NLP, gaining growing attentions over years. In this project, we combined these two tasks together to accomplish a more complicated task, which is identifying the characters in multiparty dialogues. Different from previous traditional methods of coreference resolution, a state-of-the-art end-to-end model is adopted, which significantly outperforms other previous work. In addition, our entity-linking model is based on CNN instead of knowledge databases. Finally,we evaluated our models using the scripts from real TV shows.The results of coreference resolution are satisfactory, but the performance of entity linking does not live up to our expection. We analyzed the possible underlying reasons, which pointing out the research direction in future work.
 \end{abstract}
 
 \section{Introduction}
 
 Our main goal is to accomplish a shared task in SemEval 2018 - Task 4: Character Identification on Multiparty Dialogues. This tasks requires us to build a system which can identify different mentions in multiparty dialogues as corresponding characters in the show.This task is rather challenging, for cross-document entity resolution is imperative for identifying such mentions as real characters.
 
-Literally, the character identification problem is tackled as a coreference resolution task with a further step on entity linking.In terms of this task, the baseline model generates mentions from a coreference system, and then each coreference chain is linked to a specific character identity. Both parts are implemented with agglomerative convolutional neural network in previous system (Chen et al., 2017; Chen and Choi, 2016).Alternatively, we intend to use Bidirectional-LSTM with attention mechanism to address the same problem, which proves to have a satisfying performance in many NLP tasks. In our project, we apply the end-to-end neural coreference resolution model introduced by Lee and He, etc. (Lee et al., 2017). After obtaining the predicted clusters of mentions by the end-to-end coreference system, we choose the same algorithm of entity-linking as the one Chen proposed in his paper.
+Literally, the character identification problem is tackled as a coreference resolution task with a further step on entity linking. In terms of this task, the baseline model generates mentions from a coreference system, and then each coreference chain is linked to a specific character identity. Both parts are implemented with agglomerative convolutional neural network in previous system (Chen et al., 2017; Chen and Choi, 2016).Alternatively, we intend to use Bidirectional-LSTM with attention mechanism to address the same problem, which proves to have a satisfying performance in many NLP tasks. In our project, we apply the end-to-end neural coreference resolution model introduced by Lee and He, etc. (Lee et al., 2017). After obtaining the predicted clusters of mentions by the end-to-end coreference system, we choose the same algorithm of entity-linking as the one Chen proposed in his paper.
 
 \section{Related Works}
 \subsection{Coreference resolution}
-Machine learning methods have a long history in coreference resolution. However, the learning problem is challenging and, until very recently, hand-engineered systems built on top of automatically produced parse trees (Raghunathan et al., 2010) outperformed all learning approaches. Durrett and Klein (2013) showed that highly lexical learning approaches reverse this trend, and more recent neural models (Wiseman et al., 2016; Clark and Manning, 2016b,a) have achieved significant performance gains. However, all of these models still use parsers for head features and include highly engineered mention proposal algorithms.Such pipelined systems suffer from two major drawbacks: (1) parsing mistakes can introduce cascading errors and (2) many of the hand-engineered rules do not generalize to new languages or domains.  
+Machine learning methods have a long history in coreference resolution. However, the learning problem is challenging and, until very recently, hand-engineered systems built on top of automatically produced parse trees (Raghunathan et al., 2010) outperformed all learning approaches. Durrett and Klein (2013) showed that highly lexical learning approaches reverse this trend, and more recent neural models (Wiseman et al., 2016; Clark and Manning, 2016b,a) have achieved significant performance gains. However, all of these models still use parsers for head features and include highly engineered mention proposal algorithms. Such pipelined systems suffer from two major drawbacks: (1) parsing mistakes can introduce cascading errors and (2) many of the hand-engineered rules do not generalize to new languages or domains.  
 
 The end-to-end coreference resolution model we used in this task significantly outperforms all previous work without using a syntactic parser or hand-engineered mention detector.
 
 \subsection{Entity Linking}
 
-Entity linking has traditionally relied heavily on knowledge databases, most notably, Wikipedia, for entities (Mihalcea and Csomai, 2007b; Ratinov et al., 2011b; Gattani et al., 2013; Francis-Landau et al., 2016).Although we do not make use of knowledge bases, our task is closely aligned to entity linking. Recent advances in entity linking are
+Entity linking has traditionally relied heavily on knowledge databases, most notably, Wikipedia, for entities (Mihalcea and Csomai, 2007b; Ratinov et al., 2011b; Gattani et al., 2013; Francis-Landau et al., 2016). Although we do not make use of knowledge bases, our task is closely aligned to entity linking. Recent advances in entity linking are
 also applicable to our task since we see Francis-Landau et al. (2016) use convolutional nets to capture semantic similarity between a mention and an entity by comparing context of the mention with the description of the entity. This work validates our usage of deep learning for character identification.
 
 Dialogue tracking has been an expanding task as shown by the Dialogue State Tracking Challenges hosted by Microsoft (Kim et al., 2015). That an ongoing conversation can be dynamically tracked (Henderson et al., 2013) is exciting and applicable to our task because the state of a conversation may yield significant hints for entity linking and coreference resolution. Speaker identification, a task similar to character identification, has already shown some success with partial dialogue tracking by dynamically identifying speakers at each turn in a dialogue using conditional random field models.
 
 \section{End-to-End Coreference Resolution}
 
-\subsection{Inroduction}
+\subsection{Introduction}
 Recent coreference models usually rely on syntactic parsers. However, the end-to-end coreference resolution directly consider all the spans up to a maximum length in the document as potential mentions,  compute the probability of possible ancestors (previous span) for each span, and directly optimizes the marginal likelihood of antecedent spans from gold coreference clusters.
 
-Since the number of potential mentions is very large, it is impractical to score all span pairs. So this model uses unary mention scores to prune the space of pairs of spans(spans and antecedents), which significantly reduce the pairwise computations.
+Since the number of potential mentions is very large, it is impractical to score all span pairs. So this model uses unary mention scores to prune the space of pairs of spans (spans and antecedents), which significantly reduce the pairwise computations.
 
 \subsection{Model}
 
@@ -158,9 +158,9 @@ After concatenation, we feed them into a feed-forward neural network with two hi
 Our training data has 374 documents, which contains totally 13280 gold mentions that have gold entity label. Firstly, we need to get gold clusters and generate three embeddings, i.e. mention, cluster and mention pair embeddings. Since all gold clusters are labeled with entity ids, we can flat clusters to mentions while computing three embeddings. We can easily get mention embeddings from the pretrained coref model.
 
 
-\section{Dataset and Evalution Metrics}
+\section{Dataset and Evaluation Metrics}
 \subsection{Data Description}
-The data comes from the scripts of the first two seasons of TV show Friends, which are already annotated for this task. Specifically, each season consists of episodes, and each episode is comprised of scenes.Furthermore, each scene is segmented into sentences.All datasets follow the CoNLL 2012 Shared Task data format. Each sentence is delimited by a new line and each column indicates the information regarding the word or the punctuation.
+The data comes from the scripts of the first two seasons of TV show Friends, which are already annotated for this task. Specifically, each season consists of episodes, and each episode is comprised of scenes. Furthermore, each scene is segmented into sentences. All datasets follow the CoNLL 2012 Shared Task data format. Each sentence is delimited by a new line and each column indicates the information regarding the word or the punctuation.
 \begin{table*}[]
 \centering
 \label{my-label}
@@ -176,28 +176,28 @@ AVG     & 62.76\%  & 60.14\%  & 65.73\%    & 66.06\% & 64.49\% & 67.75\%   & 66.
 \caption{Results on No Features, No Heads, and Normal}
 \end{table*}
 \subsection{Data Split}
-Considering the amount of total data is not so sufficient, we simply split them into two datasets for different purposes, training and evaluation sets. The exact raito of our training set to our evaluation set is 4:1. The evaluation set contains seventy-four scenes in \textit{Friends}.
+Considering the amount of total data is not so sufficient, we simply split them into two datasets for different purposes, training and evaluation sets. The exact ratio of our training set to our evaluation set is 4:1. The evaluation set contains seventy-four scenes in \textit{Friends}.
 
 \subsection{Coreference Evaluation Metrics}
 The coreference results are evaluated with three metrics apropos coreference resolution:MUC, $B^{3}$,and $CEAF_e$.The precision, recall and F1 score of each metric approach are calculate separately and then the averages of them are obtained, which are utilized to compare against each other.
 
 \textbf{MUC}\\
-MUC(Vilain et al.,1995) concerns the number of pairwise links needed to be inserted or removed to map system responses to gold keys.The number of links shared by  system and gold are calculated. In addition,minimum numbers of links needed to describe coreference chains of the system and gold are computed as well.
+MUC(Vilain et al.,1995) concerns the number of pairwise links needed to be inserted or removed to map system responses to gold keys.The number of links shared by  system and gold are calculated. In addition, minimum numbers of links needed to describe coreference chains of the system and gold are computed as well.
 
 \textbf{B\textsuperscript{3}} \\
-Rather than evaluating coreference chains merely on their links,$B^{3}$(Bagga and Baldwin,1998) metric computes precision and recall on a mention level.System performance is evaluated by the average of all mentions scores.
+Rather than evaluating coreference chains merely on their links,$B^{3}$(Bagga and Baldwin,1998) metric computes precision and recall on a mention level. System performance is evaluated by the average of all mentions scores.
 
 
 \textbf{CEAF\textsubscript{e}} \\
-$CEAF_e$(Luo,2005) metric further clarifies the downside of $B^{3}$, in which entites can be used more than once during evaluation. Consequently, both multiple coreference chains of the same entity and chains with mentions of multiple entities are not penalized.To mitigate the aforementioned problem, $CEAF_e$ evaluates exclusively on the best one-to-one mapping between the system’s and gold’s entities.
+$CEAF_e$(Luo,2005) metric further clarifies the downside of $B^{3}$, in which entities  can be used more than once during evaluation. Consequently, both multiple coreference chains of the same entity and chains with mentions of multiple entities are not penalized. To mitigate the aforementioned problem, $CEAF_e$ evaluates exclusively on the best one-to-one mapping between the system’s and gold’s entities.
 
 
 \section{Results and Analysis}
 \subsection{Ablations}
-To show whether each component in our model is actually important, we ablate various parts of the architecture and report the average F1 on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features. In our dataset, the width of mention is always one or two word, the head-finding attention mechanism for each span seems to be useless, so we select no head ablation to verify this guess.  And we also want to show the significance of feature encoding.
+To show whether each component in our model is actually important, we ablate various parts of the architecture and report the average F1 on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features. In our dataset, the width of mention is always one or two words, the head-finding attention mechanism for each span seems to be useless, so we select no head ablation to verify this guess.  And we also want to show the significance of feature encoding.
 
 \subsection{Coreference Resolution Results}
-We conducted one complete experiment and two ablation experiments, no heads and no features. The results are shown in Table 1. Comparisons of those results shows no heads experiments has the best result. The reasons is, in Friends dataset, most mentions are signle word, which means mention start and mention end are the same word and metion head has no significant contribution in this case. The result also indicates feature is an important factor of this model. In terms of coreference resolution, this model has a encouraging results comparing to most models.
+We conducted one complete experiment and two ablation experiments, no heads and no features. The results are shown in Table 1. Comparisons of those results shows no heads experiments has the best result. The reasons is, in Friends dataset, most mentions are single word, which means mention start and mention end are the same word and mention head has no significant contribution in this case. The result also indicates feature is an important factor of this model. In terms of coreference resolution, this model has an encouraging results comparing to most models.
 
 
 
