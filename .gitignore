@@ -16,3 +16,10 @@ logs/best/*
 !logs/best/*.max.*
 !logs/best/*.entity_linking.*
 
+!report
+report/*
+!*.jpg
+!*.bib
+!*.bst
+!*.sty
+!*.tex
