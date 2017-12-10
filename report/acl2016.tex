@@ -67,7 +67,7 @@ Our main goal is to accomplish a shared task in SemEval 2018 - Task 4: Character
 
 Literally, the character identification problem is tackled as a coreference resolution task with a further step on entity linking.In terms of this task, the baseline model generates mentions from a coreference system, and then each coreference chain is linked to a specific character identity. Both parts are implemented with agglomerative convolutional neural network in previous system (Chen et al., 2017; Chen and Choi, 2016).Alternatively, we intend to use Bidirectional-LSTM with attention mechanism to address the same problem, which proves to have a satisfying performance in many NLP tasks. In our project, we apply the end-to-end neural coreference resolution model introduced by Lee and He, etc. (Lee et al., 2017). After obtaining the predicted clusters of mentions by the end-to-end coreference system, we choose the same algorithm of entity-linking as the one Chen proposed in his paper.
 
-\section{Previous Work}
+\section{Related Works}
 \subsection{Coreference resolution}
 Machine learning methods have a long history in coreference resolution. However, the learning problem is challenging and, until very recently, hand-engineered systems built on top of automatically produced parse trees (Raghunathan et al., 2010) outperformed all learning approaches. Durrett and Klein (2013) showed that highly lexical learning approaches reverse this trend, and more recent neural models (Wiseman et al., 2016; Clark and Manning, 2016b,a) have achieved significant performance gains. However, all of these models still use parsers for head features and include highly engineered mention proposal algorithms.Such pipelined systems suffer from two major drawbacks: (1) parsing mistakes can introduce cascading errors and (2) many of the hand-engineered rules do not generalize to new languages or domains.  
 
@@ -110,7 +110,6 @@ where GOLD(i) is the set of spans in the gold cluster containing span i. If span
 To show whether each component in our model is actually important, we ablate various parts of the architecture and report the average F1 on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features.
 
 
-
 \section{Character Identification}
 
 \subsection{Introduction}
@@ -129,7 +128,7 @@ IMAGES HERE
 
 After concatenation, we feed them into a feed-forward neural network with two hidden layers. Final output is a softmax with the idmention of entity id number in Friends TV show.
 
-\subsection{Data Preprocessing}
+\subsection{Implementation}
 Our training data has 374 documents, which contains totally 13280 gold mentions that have gold entity label. Firstly, we need to get gold clusters and generate three embeddings, i.e. mention, cluster and mention pair embeddings. Since all gold clusters are labeled with entity ids, we can flat clusters to mentions while computing three embeddings. We can easily get mention embeddings from the pretrained coref model.
 
 
@@ -151,29 +150,46 @@ Rather than evaluating coreference chains merely on their links,$B^{3}$(Bagga an
 \textbf{CEAF\textsubscript{e}} \\
 $CEAF_e$(Luo,2005) metric further clarifies the downside of $B^{3}$, in which entites can be used more than once during evaluation. Consequently, both multiple coreference chains of the same entity and chains with mentions of multiple entities are not penalized.To mitigate the aforementioned problem, $CEAF_e$ evaluates exclusively on the best one-to-one mapping between the system’s and gold’s entities.
 
+\section{Experiments}
+We use a dataset generated for first two seasons of Friends, which has less training data and shorter mentions than CoNLL-2012.
 
 \section{Results and Analysis}
+
+\subsection{Coreference Resolution Results}
 We conducted one complete experiment and two ablation experiments, no heads and no features. The result of no features is shown in Table 1.
 
-\begin{table}[]
+\begin{table*}[]
 \centering
 \caption{My caption}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
         & \multicolumn{3}{l|}{No Features} & \multicolumn{3}{l|}{No Heads} & \multicolumn{3}{l|}{Normal}   \\ \hline
-        & F1       & RECALL   & PRECISION  & F1      & RECALL  & PRECISION & F1      & RECALL  & PRECISION \\ \hline
+        & F1       & R   & P  & F1      & R  & P & F1      & R  & P \\ \hline
 MUC     & 79.14\%  & 76.98\%  & 81.42\%    & 80.90\% & 80.38\% & 81.43\%   & 80.84\% & 81.64\% & 80.71\%   \\ \hline
-B3      & 60.68\%  & 55.22\%  & 67.34\%    & 64.38\% & 62.54\% & 66.34\%   & 65.39\% & 68.89\% & 62.23\%   \\ \hline
-CEAF\_e & 48.47\%  & 48.21\%  & 48.43\%    & 52.89\% & 50.54\% & 55.48\%   & 51.80\% & 53.51\% & 50.20\%   \\ \hline
+B\textsuperscript{3}      & 60.68\%  & 55.22\%  & 67.34\%    & 64.38\% & 62.54\% & 66.34\%   & 65.39\% & 68.89\% & 62.23\%   \\ \hline
+CEAF\textsubscript{e} & 48.47\%  & 48.21\%  & 48.43\%    & 52.89\% & 50.54\% & 55.48\%   & 51.80\% & 53.51\% & 50.20\%   \\ \hline
 AVG     & 62.76\%  & 60.14\%  & 65.73\%    & 66.06\% & 64.49\% & 67.75\%   & 66.02\% & 68.02\% & 64.17\%   \\ \hline
 \end{tabular}
-\end{table}
+\end{table*}
+
+\subsection{Entity Linking Results}
+We only got about 20\% accuracy on character identification prediction, addressing that simply using combination of mention embeddings generated from coreference system is weak for predcting entity ids. It fails to contain cluster information even though the coreference system does be trained to optimize the clustering accuracy. 
+
+Another issue is that our models actually overfit. In the beginning, we used the ACNN model and overfit quite easily. Then we tried to reduce model complexities by only using one layer feed-forward neural network on mention embeddings, getting rid of cluster embedding and mention pair embedding. However, the preditcion precision is still low. This problem is arisen from two reasons. Firstly, this dataset is too small to use very complex model like deep neural networks. Secondly, consider our model, mention embeddings are extracted from merely word embeddings, which are insufficient to capture entity information.
 
 \section{Conclusion and Future work}
 
-In this work, we proposed an end-to-end character identification system, combining neural coreference system with an agglomerative convolutional neural network entity linking model. The results should be improved in the future if we can gather GPU resources. Inspired by (Clark and Manning, 2016), the next step will be designing loss function proposed in their work and boost the reliability of our system using reinforcement learning.
+In this work, we implemented a character identification system by integrating the neural coreference system with a CNN based entity linking model.  
 
+There are many open space for improvements. We should conduct the following experiments:
+{\bf Fortified Mention Embedding} 
+
+{\bf End-to-End Training}
+The original 
+
+
+ Inspired by (Clark and Manning, 2016), the next step will be designing loss function proposed in their work and boost the reliability of our system using reinforcement learning.
 
 \section*{Acknowledgments}
 
@@ -220,4 +236,5 @@ numbering over to letters.
 need that.
 
 \end{document}
+
 
