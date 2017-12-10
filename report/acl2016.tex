@@ -43,7 +43,7 @@
    Pu-Chin Chen
   {\tt \{puchinchen@ucla.edu\}} \\
   Aoxuan Li 
-  {\tt \{a811278305@gmail.com\}} \\
+  {\tt \{douglasli@cs.ucla.edu\}} \\
   Yutian Zhang
   {\tt \{yutianzh0527@gmail.com\}} \\
   Xin Liu
@@ -66,8 +66,11 @@ Literally, the character identification problem is tackled as a coreference reso
 
 
 \section{Related Work}
+
 \subsection{Coreference resolution}
+
 The area of coreference resolution has resorted to the techniques of machine learning for many years. Still, the learning problem is challenging and, until very recently, hand-engineered systems built on top of automatically produced parse trees \cite{Raghunathan:2010:MSC:1870658.1870706} outperformed all learning approaches.\cite{Durrett2013EasyVA} showed that highly lexical learning approaches reverse this trend, and more recent neural models\cite{2016arXiv160403035W,2016arXiv160908667C,2016arXiv160601323C} have achieved noticeable performance gains. However, all of the aforementioned models still use parsers for head features and include highly engineered mention proposal algorithms. Such pipelined systems suffer from two major drawbacks. First, parsing mistakes can introduce cascading errors. Second, many hand-engineered rules do not generalize ideally to new languages or domains.  
+
 \subsection{Entity Linking}
 
 Entity linking has traditionally relied heavily on knowledge databases, most notably, Wikipedia, for entities 
@@ -78,7 +81,6 @@ As indicated by the Dialogue State Tracking Challenges hosted by Microsoft  \cit
 
 \section{End-to-End Coreference Resolution}
 
-<<<<<<< HEAD
 \subsection{Basic Idea}
 Traditional coreference models usually rely on syntactic parsers from the perspective of the linguistics. In contrast, the end-to-end coreference resolution directly considers all the spans up to a maximum length in the document as potential mentions,  computes the probability of possible ancestors (previous span) for each span, and directly optimizes the marginal likelihood of antecedent spans from gold coreference clusters.
 
