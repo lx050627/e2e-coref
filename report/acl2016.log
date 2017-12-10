@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.9)  9 DEC 2017 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.9)  9 DEC 2017 19:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -214,9 +214,8 @@ File: 03.jpg Graphic file (type jpg)
 Package pdftex.def Info: 03.jpg used on input line 105.
 (pdftex.def)             Requested size: 198.73941pt x 126.47134pt.
 
-Underfull \hbox (badness 4403) in paragraph at lines 112--113
-[]\OT1/ptm/b/n/10.95 Learning \OT1/ptm/m/n/10.95 We op-ti-mize the marginal log
--
+Underfull \hbox (badness 2495) in paragraph at lines 112--113
+[]\OT1/ptm/m/n/10.95 Learning: We op-ti-mize the marginal log-
  []
 
 <04.jpg, id=14, 247.92625pt x 76.285pt>
@@ -232,51 +231,47 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 116.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [2 <./02.jpg> <./03.jpg> <./04.jpg>] <05.jpg, id=22, 364.36125pt x 312.16624pt
 >
 File: 05.jpg Graphic file (type jpg)
-
-<use 05.jpg>
-Package pdftex.def Info: 05.jpg used on input line 130.
+ <use 05.jpg>
+Package pdftex.def Info: 05.jpg used on input line 129.
 (pdftex.def)             Requested size: 238.48878pt x 148.15666pt.
 
-Overfull \hbox (19.40266pt too wide) in paragraph at lines 130--131
+Overfull \hbox (19.40266pt too wide) in paragraph at lines 129--130
 [][] 
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 134--135
+Underfull \hbox (badness 1231) in paragraph at lines 133--134
 []\OT1/ptm/m/n/10.95 We pre-pare three em-bed-dings gen-er-ated by
  []
 
 <06.jpg, id=23, 362.35374pt x 74.2775pt>
 File: 06.jpg Graphic file (type jpg)
  <use 06.jpg>
-Package pdftex.def Info: 06.jpg used on input line 136.
+Package pdftex.def Info: 06.jpg used on input line 135.
 (pdftex.def)             Requested size: 180.6788pt x 43.36432pt.
 
 <07.jpg, id=24, 367.3725pt x 102.3825pt>
 File: 07.jpg Graphic file (type jpg)
  <use 07.jpg>
-Package pdftex.def Info: 07.jpg used on input line 140.
+Package pdftex.def Info: 07.jpg used on input line 139.
 (pdftex.def)             Requested size: 180.67555pt x 46.97623pt.
 
-Underfull \hbox (badness 5189) in paragraph at lines 155--156
+Underfull \hbox (badness 5189) in paragraph at lines 154--155
 \OT1/ptm/m/n/10.95 met-rics apro-pos coref-er-ence res-o-lu-tion:MUC,
  []
 
 
-Underfull \hbox (badness 1629) in paragraph at lines 155--156
+Underfull \hbox (badness 1629) in paragraph at lines 154--155
 \OML/cmm/m/it/10.95 B[]$\OT1/ptm/m/n/10.95 ,and $\OML/cmm/m/it/10.95 CEAF[]$\OT
 1/ptm/m/n/10.95 .The pre-ci-sion, re-call and F1
  []
 
 [3 <./05.jpg> <./06.jpg> <./07.jpg>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 160.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 159.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -284,33 +279,33 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 1365) in paragraph at lines 163--165
+Underfull \hbox (badness 1365) in paragraph at lines 162--164
 \OML/cmm/m/it/10.95 CEAF[]$\OT1/ptm/m/n/10.95 (Luo,2005) met-ric fur-ther clar-
 i-fies the
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 174.
+               Default added (so using `tbp') on input line 173.
 
 
-Overfull \hbox (0.62482pt too wide) in paragraph at lines 178--187
+Overfull \hbox (0.62482pt too wide) in paragraph at lines 177--186
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
 []\OT1/ptm/b/n/10.95 End-to-End Train-ing \OT1/ptm/m/n/10.95 An-other ap-proach
 
  []
 
 
-Underfull \hbox (badness 1320) in paragraph at lines 201--203
+Underfull \hbox (badness 1320) in paragraph at lines 200--202
 \OT1/ptm/m/n/10.95 should be adding one layer for out-put en-tity
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 201--203
+Underfull \hbox (badness 1226) in paragraph at lines 200--202
 \OT1/ptm/m/n/10.95 and boost the re-li-a-bil-ity of our sys-tem us-ing
  []
 
@@ -326,7 +321,7 @@ l.3 \end{thebibliography}
                          
 ? 
 ) [4]
-Underfull \hbox (badness 2181) in paragraph at lines 239--243
+Underfull \hbox (badness 2181) in paragraph at lines 238--242
 [][]\OT1/pcr/m/n/10.95 \appendix []\OT1/ptm/m/n/10.95 be-fore any ap-pendix sec
 -tion to
  []
@@ -352,7 +347,7 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local
 e/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on acl2016.pdf (5 pages, 307017 bytes).
+Output written on acl2016.pdf (5 pages, 307200 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream

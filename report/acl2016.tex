@@ -109,15 +109,14 @@ Low-scoring spans are pruned, so that only a manageable number of spans is consi
 Second step: compute antecedent scores from pairs of span representations. And then sum the mention scores of both spans and their pairwise antecedent score as the final coreference score of this pair of spans.
 The antecedent scoring function includes explicit element-wise similarity of each span pair and a learned 20-dimensional feature vector which encoding all features like speaker genre, span distance, mention width.
 
-{\bf Learning} We optimize the marginal log-likelihood of all correct antecedents implied by the gold clustering:
+Learning: We optimize the marginal log-likelihood of all correct antecedents implied by the gold clustering:
 
 \includegraphics[width=2.00in,height=0.55in]{04.jpg}
 
 where GOLD(i) is the set of spans in the gold cluster containing span i. If span i does not belong to a gold cluster or all gold antecedents have been pruned, GOLD(i) = \{$\varepsilon $\}.
 
 \subsection{Ablations}
-To show whether each component in our model is actually important, we ablate various parts of the architecture and report the average F1 on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features.
-
+To show whether each component in our model is actually important, we ablate various parts of the architecture and report the average F1 on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features. In our dataset, the width of mention is always one or two word, the head-finding attention mechanism for each span seems to be useless, so we select no head ablation to verify this guess.  And we also want to show the significance of feature encoding.
 
 
 \section{Character Identification}
