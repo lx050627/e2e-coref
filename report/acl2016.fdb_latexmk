@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex acl2016"] 1512859776 "acl2016.aux" "acl2016.bbl" "acl2016" 1512869688
-  "./acl2016.bst" 1512855302 25099 9e361dd593cf5bde4bcdca583d3b8ad3 ""
-  "acl2016.aux" 1512869688 109 6ce5644634300b3556dc95b6764f77df ""
-  "acl2016.bib" 1512855302 1100 35c626a522fd933d9ba2d3b08dcfb41b ""
+["bibtex acl2016"] 1512871363 "acl2016.aux" "acl2016.bbl" "acl2016" 1512871364
+  "acl2016.aux" 1512871363 109 a0ccd30783d48e56bd305514848277fc ""
+  "acl2016.bib" 0 -1 0 ""
+  "acl2016.bst" 0 -1 0 ""
   (generated)
-  "acl2016.blg"
   "acl2016.bbl"
-["pdflatex"] 1512869687 "acl2016.tex" "acl2016.pdf" "acl2016" 1512869688
+  "acl2016.blg"
+["pdflatex"] 1512871363 "acl2016.tex" "acl2016.pdf" "acl2016" 1512871364
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1480098688 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -61,11 +61,11 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "acl2016.aux" 1512869688 109 6ce5644634300b3556dc95b6764f77df ""
-  "acl2016.bbl" 1512859776 49 0eba253fc001332e731e8aba3f23127b "bibtex acl2016"
+  "acl2016.aux" 1512871363 109 a0ccd30783d48e56bd305514848277fc ""
+  "acl2016.bbl" 0 -1 0 "bibtex acl2016"
   "acl2016.sty" 1512855302 23347 c80bf9b662fed6489d932f364c6b989a ""
-  "acl2016.tex" 1512869687 15443 ebe77c506b1bb433d721bf2439b79665 ""
+  "acl2016.tex" 1512871362 16527 496a11a2ace2b3f65fc142101d7ce473 ""
   (generated)
-  "acl2016.pdf"
   "acl2016.log"
   "acl2016.aux"
+  "acl2016.pdf"
