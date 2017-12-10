@@ -63,7 +63,7 @@ pip install -r requirements.txt
 * To run the demo with other experiments, replace `final` with your configuration name.
 
 ## Contact
-Aoxuan Li
-Pu-Chin Chen
-Xin Liu
-Yutian Zhang
+* Aoxuan Li [a811278305@gmail.com](a811278305@gmail.com)
+* Pu-Chin Chen [puchinchen@ucla.edu](puchinchen@ucla.edu)
+* Xin Liu [xinliu627@ucla.edu](xinliu627@ucla.edu)
+* Yutian Zhang [yutianzh0527@gmail.com](yutianzh0527@gmail.com)
