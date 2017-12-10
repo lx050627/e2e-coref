@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2017 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2017 23:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,6 +6,41 @@ entering extended mode
 (./acl2016.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 a
+     cl2016.synctex.gz
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 6 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no z in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--14
+[] 
+ []
+
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/size11.clo
@@ -22,7 +57,8 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (./acl2016.sty
+ [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./
+acl2016.sty
 Conference Style for ACL 2016 -- released January 17th, 2016
 \titlebox=\skip43
 \aclrulerbox=\box26
@@ -148,19 +184,19 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ) (./acl2016.aux)
 \openout1 = `acl2016.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 56.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -229,106 +265,203 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 56.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 57.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 56.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 57.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 56.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 57.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--64
+[]\OT1/ptm/m/n/10.95 <<<<<<< HEAD Coref-er-ence res-o-lu-tion
+ []
+
+
+Underfull \hbox (badness 3623) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 and en-tity link-ing are two im-por-tant
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 at-ten-tions over years. In this project,
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 we com-bined these two tasks to-gether
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 which is iden-ti-fy-ing the char-ac-ters in
+ []
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 res-o-lu-tion, a state-of-the-art end-to-end
+ []
+
+
+Underfull \hbox (badness 2717) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 model is adopted, which sig-nif-i-cantly
+ []
+
+
+Underfull \hbox (badness 1755) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 out-per-forms other pre-vi-ous work. In
+ []
+
+
+Underfull \hbox (badness 2393) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 but the per-for-mance of en-tity link-ing
+ []
+
+
+Underfull \hbox (badness 3158) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 res-o-lu-tion and en-tity link-ing are two
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 task, which is iden-ti-fy-ing the char-ac-
+ []
+
+
+Underfull \hbox (badness 4872) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 from pre-vi-ous tra-di-tional meth-ods of
+ []
+
+
+Underfull \hbox (badness 5878) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 coref-er-ence res-o-lu-tion, a state-of-the-
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 sig-nif-i-cantly out-pe-forms other pre-vi-ous
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 databases. Fi-nally,we eval-u-ated our
+ []
+
+
+Overfull \hbox (24.88039pt too wide) in paragraph at lines 59--64
+\OT1/ptm/m/n/10.95 57f72a367eea49fbab09890151d4683d9cea52c6 
+ []
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
- [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
 
 ]
-<02.jpg, id=11, 704.6325pt x 299.1175pt>
+[2]
+Underfull \hbox (badness 1755) in paragraph at lines 104--106
+[]\OT1/ptm/m/n/10.95 Since the num-ber of po-ten-tial men-tions is
+ []
+
+
+Underfull \hbox (badness 3281) in paragraph at lines 104--106
+\OT1/ptm/m/n/10.95 tion scores to prune the space of pairs of
+ []
+
+
+Underfull \hbox (badness 3428) in paragraph at lines 104--106
+\OT1/ptm/m/n/10.95 re-duce the pair-wise com-pu-ta-tions. >>>>>>>
+ []
+
+<02.jpg, id=18, 704.6325pt x 299.1175pt>
 File: 02.jpg Graphic file (type jpg)
  <use 02.jpg>
-Package pdftex.def Info: 02.jpg used on input line 88.
+Package pdftex.def Info: 02.jpg used on input line 111.
 (pdftex.def)             Requested size: 227.62204pt x 96.62325pt.
 
-Overfull \hbox (8.53592pt too wide) in paragraph at lines 88--89
+Overfull \hbox (8.53592pt too wide) in paragraph at lines 111--112
+[][] 
+ []
+
+<03.jpg, id=20, 402.50375pt x 246.9225pt>
+File: 03.jpg Graphic file (type jpg)
+ <use 03.jpg>
+Package pdftex.def Info: 03.jpg used on input line 120.
+(pdftex.def)             Requested size: 227.62204pt x 139.63579pt.
+
+Overfull \hbox (8.53592pt too wide) in paragraph at lines 120--121
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<03.jpg, id=13, 402.50375pt x 246.9225pt>
-File: 03.jpg Graphic file (type jpg)
- <use 03.jpg>
-Package pdftex.def Info: 03.jpg used on input line 97.
-(pdftex.def)             Requested size: 227.62204pt x 139.63579pt.
 
-Overfull \hbox (8.53592pt too wide) in paragraph at lines 97--98
-[][] 
- []
-
-
-Underfull \hbox (badness 1852) in paragraph at lines 105--106
+Underfull \hbox (badness 1852) in paragraph at lines 128--129
 \OT1/ptm/m/n/10.95 During the learn-ing pe-riod, we op-ti-mize the
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 112.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 135.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 112.
- [2 <./02.jpg> <./03.jpg>] <05.jpg, id=26, 364.36125pt x 312.16624pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 135.
+
+<05.jpg, id=21, 364.36125pt x 312.16624pt>
 File: 05.jpg Graphic file (type jpg)
  <use 05.jpg>
-Package pdftex.def Info: 05.jpg used on input line 122.
+Package pdftex.def Info: 05.jpg used on input line 145.
 (pdftex.def)             Requested size: 227.62204pt x 195.01291pt.
 
-Overfull \hbox (8.53592pt too wide) in paragraph at lines 122--123
+Overfull \hbox (8.53592pt too wide) in paragraph at lines 145--146
 [][] 
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 126--127
-[]\OT1/ptm/m/n/10.95 We pre-pare three em-bed-dings gen-er-ated by
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+[3 <./02.jpg> <./03.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 161.
+               Default added (so using `tbp') on input line 184.
 
 
-Overfull \hbox (21.61433pt too wide) in paragraph at lines 164--173
+Overfull \hbox (21.61433pt too wide) in paragraph at lines 187--196
  [][] 
  []
 
 
-Underfull \hbox (badness 5189) in paragraph at lines 179--180
+Underfull \hbox (badness 5189) in paragraph at lines 202--203
 \OT1/ptm/m/n/10.95 met-rics apro-pos coref-er-ence res-o-lu-tion:MUC,
  []
 
 
-Underfull \hbox (badness 1629) in paragraph at lines 179--180
+Underfull \hbox (badness 1629) in paragraph at lines 202--203
 \OML/cmm/m/it/10.95 B[]$\OT1/ptm/m/n/10.95 ,and $\OML/cmm/m/it/10.95 CEAF[]$\OT
 1/ptm/m/n/10.95 .The pre-ci-sion, re-call and F1
  []
 
-[3 <./05.jpg>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 184.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 207.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -336,27 +469,39 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 1365) in paragraph at lines 188--190
+Underfull \hbox (badness 1365) in paragraph at lines 211--213
 \OML/cmm/m/it/10.95 CEAF[]$\OT1/ptm/m/n/10.95 (Luo,2005) met-ric fur-ther clar-
 i-fies the
  []
 
+[4 <./05.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 7869) has occurred while \output is active []
+ [5]
+(./acl2016.bbl
 
- [4]
-No file acl2016.bbl.
-[5
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \end{thebibliography}
+                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+) [6
 
 ] (./acl2016.aux) ) 
 Here is how much of TeX's memory you used:
- 2498 strings out of 492995
- 34123 string characters out of 6132704
- 108007 words of memory out of 5000000
- 5989 multiletter control sequences out of 15000+600000
- 25663 words of font info for 59 fonts, out of 8000000 for 9000
+ 2501 strings out of 492995
+ 34161 string characters out of 6132704
+ 107997 words of memory out of 5000000
+ 5990 multiletter control sequences out of 15000+600000
+ 26170 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,12n,25p,914b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,12n,25p,915b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.
 enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.p
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pf
@@ -373,10 +518,10 @@ ive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/201
 7/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on acl2016.pdf (5 pages, 300430 bytes).
+Output written on acl2016.pdf (7 pages, 304707 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 96 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
