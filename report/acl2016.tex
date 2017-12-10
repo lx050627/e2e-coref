@@ -53,13 +53,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-  This document contains the instructions for preparing a camera-ready
-  manuscript for the proceedings of ACL-2016. The document itself
-  conforms to its own specifications, and is therefore an example of
-  what your manuscript should look like. These instructions should be
-  used for both papers submitted for review and for final versions of
-  accepted papers.  Authors are asked to conform to all the directions
-  reported in this document.
+  Coreference resolution and entity linking are two important research topics in NPL, gaining growing attentions over years. In this project, we combined these two tasks together to accomplish a more complicated task, which is identifying the characters in multiparty dialoagues. Different from previous traditional methods of coreference resolution, we adopted a state-of-the-art end-to-end model, which outpeforms significantly other previous work. In addition, our entity-linking model is based on CNN instead of knowledge databases. Finally,we evaluated our models using the scripts from real TV shows.The results of coreference resolution are satisfactory, but the performance of entity linking does not live up to our expections. We analyzed the possible underlying reasons, which pointing out the research direction in future work.
 \end{abstract}
 
 \section{Introduction}
@@ -119,7 +113,7 @@ where GOLD(i) is the set of spans in the gold cluster containing span i. If span
 To show whether each component in our model is actually important, we ablate various parts of the architecture and report the average F1 on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features. In our dataset, the width of mention is always one or two word, the head-finding attention mechanism for each span seems to be useless, so we select no head ablation to verify this guess.  And we also want to show the significance of feature encoding.
 
 
-\section{Character Identification}
+\section{Entity Linking}
 
 \subsection{Introduction}
 Once the coreference resolution system is built and trained, we can predict co-references represented by clusters for each scene document. The next step should be making predictions from clusters to TV show character id. We model this process as an entity linking task. This section describes our entity linking model that takes the mention embeddings and the mention-pair embeddings generated ACNN and classifies each mention to one of the character labels.
