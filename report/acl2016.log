@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2017 19:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.9)  9 DEC 2017 19:36
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **acl2016.tex
 (./acl2016.tex
@@ -315,7 +316,7 @@ Underfull \hbox (badness 1226) in paragraph at lines 201--203
 
 (./acl2016.bbl
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./acl2016.bbl:3: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -323,9 +324,7 @@ Type  H <return>  for immediate help.
                                                   
 l.3 \end{thebibliography}
                          
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 ) [4]
 Underfull \hbox (badness 2181) in paragraph at lines 239--243
 [][]\OT1/pcr/m/n/10.95 \appendix []\OT1/ptm/m/n/10.95 be-fore any ap-pendix sec
