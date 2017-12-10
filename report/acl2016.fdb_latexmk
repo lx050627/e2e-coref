@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex acl2016"] 1512876194 "acl2016.aux" "acl2016.bbl" "acl2016" 1512876224
+["bibtex acl2016"] 1512876194 "acl2016.aux" "acl2016.bbl" "acl2016" 1512877363
   "./acl2016.bst" 1512875069 25099 9e361dd593cf5bde4bcdca583d3b8ad3 ""
-  "acl2016.aux" 1512876223 109 2d0ae2025342d4bd812f2b5420696b22 ""
+  "acl2016.aux" 1512877362 109 2d0ae2025342d4bd812f2b5420696b22 ""
   "acl2016.bib" 1512875069 1100 35c626a522fd933d9ba2d3b08dcfb41b ""
   (generated)
-  "acl2016.bbl"
   "acl2016.blg"
-["pdflatex"] 1512876223 "acl2016.tex" "acl2016.pdf" "acl2016" 1512876224
+  "acl2016.bbl"
+["pdflatex"] 1512877362 "acl2016.tex" "acl2016.pdf" "acl2016" 1512877363
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1480098688 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -19,6 +19,9 @@
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm" 1480098689 4408 25b74d011a4c66b7f212c0cc3c90061b ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm" 1480098689 2288 f478fc8fed18759effb59f3dad7f3084 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm" 1480098689 4640 532ca3305aad10cc01d769f3f91f1029 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1480098701 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1480098701 1344 8a0be4fe4d376203000810ad4dc81558 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1480098701 1332 1fde11373e221473104d6cc5993f046e ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1480098701 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1480098701 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1480098701 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -33,10 +36,14 @@
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm" 1480098711 520 82a3d37183f34b6eb363a161dfc002c2 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1480098711 520 4889cce2180234b97cad636b6039c722 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/latex-fonts/lasy8.tfm" 1480098711 520 7bb3abb160b19e0ed6ac404bb59052b7 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1480098733 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1480098733 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1480098733 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1480098733 35469 70d41d2b9ea31d5d813066df7c99281c ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1480098733 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1480098733 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1480098733 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1480098733 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1480098746 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1480098746 35941 f27169cc74234d5bd5e4cca5abafaabb ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1480098746 44729 811d6c62865936705a31c797a1d5dada ""
@@ -86,11 +93,11 @@
   "05.jpg" 1512875069 111929 a380ee70924cef1ff15e5f98909acd4e ""
   "06.jpg" 1512875069 22315 68469e37928cdbff2641bc2cae5a8589 ""
   "07.jpg" 1512875069 46117 691a322924c866eead7a44e49679a3fc ""
-  "acl2016.aux" 1512876223 109 2d0ae2025342d4bd812f2b5420696b22 ""
+  "acl2016.aux" 1512877362 109 2d0ae2025342d4bd812f2b5420696b22 ""
   "acl2016.bbl" 1512876194 49 0eba253fc001332e731e8aba3f23127b "bibtex acl2016"
   "acl2016.sty" 1512855302 23347 c80bf9b662fed6489d932f364c6b989a ""
-  "acl2016.tex" 1512876222 17620 f4925c0dd320098c0436d62db6955a58 ""
+  "acl2016.tex" 1512877361 17738 e655611444242a7b6a3b2485246cf90f ""
   (generated)
-  "acl2016.aux"
   "acl2016.pdf"
+  "acl2016.aux"
   "acl2016.log"
