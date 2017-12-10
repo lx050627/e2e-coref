@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2017 17:34
-=======
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.21)  9 DEC 2017 17:45
->>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2017 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -67,11 +63,7 @@ LaTeX Font Info:    ... okay on input line 52.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 52.
-<<<<<<< HEAD
  (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-=======
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
->>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ABD: EveryShipout initializing macros
@@ -106,11 +98,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 80.
-<<<<<<< HEAD
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-=======
- [1
->>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 
 
 
@@ -128,134 +116,75 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 107.
 
-<<<<<<< HEAD
-Underfull \hbox (badness 1231) in paragraph at lines 122--123
-=======
 Underfull \hbox (badness 1231) in paragraph at lines 121--122
->>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 []\OT1/ptm/m/n/10.95 We pre-pare three em-bed-dings gen-er-ated by
  []
 
 [2]
-<<<<<<< HEAD
-Underfull \hbox (badness 5189) in paragraph at lines 143--144
-=======
 Underfull \hbox (badness 5189) in paragraph at lines 142--143
->>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 \OT1/ptm/m/n/10.95 met-rics apro-pos coref-er-ence res-o-lu-tion:MUC,
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 1629) in paragraph at lines 143--144
-=======
 Underfull \hbox (badness 1629) in paragraph at lines 142--143
->>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 \OML/cmm/m/it/10.95 B[]$\OT1/ptm/m/n/10.95 ,and $\OML/cmm/m/it/10.95 CEAF[]$\OT
 1/ptm/m/n/10.95 .The pre-ci-sion, re-call and F1
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-<<<<<<< HEAD
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 148.
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-
-Underfull \hbox (badness 1365) in paragraph at lines 151--153
-=======
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
-Missing character: There is no â€™ in font ptmr7t!
-Missing character: There is no â€™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
 
 Underfull \hbox (badness 1365) in paragraph at lines 150--152
->>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 \OML/cmm/m/it/10.95 CEAF[]$\OT1/ptm/m/n/10.95 (Luo,2005) met-ric fur-ther clar-
 i-fies the
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-<<<<<<< HEAD
-               Default added (so using `tbp') on input line 160.
+               Default added (so using `tbp') on input line 161.
 
 
-Overfull \hbox (336.46904pt too wide) in paragraph at lines 164--173
- [][] 
- []
-
-[3] (./acl2016.bbl
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 \end{thebibliography}
-                         
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-Underfull \hbox (badness 2181) in paragraph at lines 215--219
-[][]\OT1/pcr/m/n/10.95 \appendix []\OT1/ptm/m/n/10.95 be-fore any ap-pendix sec
--tion to
-=======
-               Default added (so using `tbp') on input line 159.
-
-
-Overfull \hbox (336.46904pt too wide) in paragraph at lines 163--172
+Overfull \hbox (336.46904pt too wide) in paragraph at lines 165--174
  [][] 
  []
 
 [3]
 No file acl2016.bbl.
 
-Underfull \hbox (badness 2181) in paragraph at lines 227--231
-[]\OT1/pcr/m/n/10.95 \appendix \OT1/ptm/m/n/10.95 be-fore any ap-pendix sec-tio
-n to
->>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
+Underfull \hbox (badness 2181) in paragraph at lines 229--233
+[][]\OT1/pcr/m/n/10.95 \appendix []\OT1/ptm/m/n/10.95 be-fore any ap-pendix sec
+-tion to
  []
 
 [4] (./acl2016.aux) ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 555 strings out of 492995
- 7189 string characters out of 6132704
- 69866 words of memory out of 5000000
- 4137 multiletter control sequences out of 15000+600000
- 22766 words of font info for 52 fonts, out of 8000000 for 9000
+ 552 strings out of 492995
+ 7151 string characters out of 6132704
+ 70866 words of memory out of 5000000
+ 4136 multiletter control sequences out of 15000+600000
+ 22259 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,9n,24p,914b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.
-enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/urw/times/utmri8a.pfb>
-Output written on acl2016.pdf (4 pages, 102234 bytes).
+ 31i,9n,23p,914b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
+fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on acl2016.pdf (4 pages, 103215 bytes).
 PDF statistics:
  54 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-=======
- 540 strings out of 493706
- 6995 string characters out of 6145768
- 67332 words of memory out of 5000000
- 3924 multiletter control sequences out of 15000+600000
- 12844 words of font info for 41 fonts, out of 8000000 for 9000
- 1328 hyphenation exceptions out of 8191
- 31i,9n,23p,914b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on acl2016.pdf (4 pages).
->>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
