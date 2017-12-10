@@ -31,8 +31,9 @@
 #     compile_partition test test v4 _gold_conll $1
 # }
 
-cat friends.train.trial/friends.train.scene_delim.conll >> train.english.v4_auto_conll
-cat friends.train.trial/friends.trial.scene_delim.conll >> dev.english.v4_auto_conll
+cat friends.train.trial/friends.train.scene_delim.conll > train.english.v4_auto_conll
+cat friends.train.trial/friends.trial.scene_delim.conll > dev.english.v4_auto_conll
+cat friends.train.trial/friends.trial.scene_delim.conll > test.english.v4_gold_conll
 
 # compile_language english
 python minimize.py

@@ -1,4 +1,5 @@
 #!/bin/bash
+pip install -r requirements.txt
 
 # Download pretrained embeddings.
 curl -O http://appositive.cs.washington.edu/resources/turian.50d.txt

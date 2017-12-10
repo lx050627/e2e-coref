@@ -55,6 +55,7 @@ def create_example(text):
 
 def print_predictions(example):
   words = util.flatten(example["sentences"])
+  print(example["mention_to_clusters"])
   for cluster in example["predicted_clusters"]:
     print(u"Predicted cluster: {}".format([" ".join(words[m[0]:m[1]+1]) for m in cluster]))
 
@@ -66,7 +67,7 @@ def make_predictions(text, model):
 
   predicted_antecedents = model.get_predicted_antecedents(antecedents, antecedent_scores)
 
-  example["predicted_clusters"], _ = model.get_predicted_clusters(mention_starts, mention_ends, predicted_antecedents)
+  example["predicted_clusters"], example["mention_to_clusters"] = model.get_predicted_clusters(mention_starts, mention_ends, predicted_antecedents)
   example["top_spans"] = zip((int(i) for i in mention_starts), (int(i) for i in mention_ends))
   example["head_scores"] = head_scores.tolist()
   return example
@@ -100,6 +101,7 @@ if __name__ == "__main__":
       print("Running server at port {}".format(port))
       server.serve_forever()
     else:
+      print("Input")
       while True:
         text = raw_input("Document text: ")
         print_predictions(make_predictions(text, model))
