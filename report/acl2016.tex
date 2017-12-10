@@ -114,9 +114,6 @@ log\prod^{N}_{i=1}\sum_{\widehat{y}\in Y(i)\cap \text{GOLD}(i)}P(\widehat{y})
 
 where GOLD(i) is the set of spans in the gold cluster containing span i. If span i does not belong to a gold cluster or all gold antecedents have been pruned, GOLD(i) = \{$\varepsilon $\}.
 
-\subsection{Ablations}
-To show whether each component in our model is actually important, we ablate various parts of the architecture and report the average F1 on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features. In our dataset, the width of mention is always one or two word, the head-finding attention mechanism for each span seems to be useless, so we select no head ablation to verify this guess.  And we also want to show the significance of feature encoding.
-
 
 \section{Entity Linking}
 
@@ -196,7 +193,8 @@ $CEAF_e$(Luo,2005) metric further clarifies the downside of $B^{3}$, in which en
 
 
 \section{Results and Analysis}
-
+\subsection{Ablations}
+To show whether each component in our model is actually important, we ablate various parts of the architecture and report the average F1 on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features. In our dataset, the width of mention is always one or two word, the head-finding attention mechanism for each span seems to be useless, so we select no head ablation to verify this guess.  And we also want to show the significance of feature encoding.
 
 \subsection{Coreference Resolution Results}
 We conducted one complete experiment and two ablation experiments, no heads and no features. The result of no features is shown in Table 1.
@@ -218,11 +216,7 @@ The coreference model, proposed by Lee and He, does not add speaker ids and othe
 {\bf End-to-End Training}
 Another approach should be adding one layer for output entity ids after the coreference scores. The new loss function will be multiclass cross entropy. We can pre-train the coreference system and then train the entity linking part, by fixing the coreference model and optimize the loss. Inspired by (Clark and Manning, 2016), the further step will be designing loss function proposed in their work and boost the reliability of our system using reinforcement learning.
 
-\section*{Acknowledgments}
 
-The acknowledgments should go immediately before the references.  Do
-not number the acknowledgments section. Do not include this section
-when submitting your paper for review.
 
 % include your own bib file like this:
 %\bibliographystyle{acl}
