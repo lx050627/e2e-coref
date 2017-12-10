@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2017 22:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2017 22:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -345,12 +345,13 @@ i-fies the
 Underfull \vbox (badness 7869) has occurred while \output is active []
 
  [4]
+No file acl2016.bbl.
 [5
 
 ] (./acl2016.aux) ) 
 Here is how much of TeX's memory you used:
- 2497 strings out of 492995
- 34119 string characters out of 6132704
+ 2498 strings out of 492995
+ 34123 string characters out of 6132704
  108007 words of memory out of 5000000
  5989 multiletter control sequences out of 15000+600000
  25663 words of font info for 59 fonts, out of 8000000 for 9000
