@@ -65,7 +65,6 @@ Our main goal is to accomplish a shared task in SemEval 2018 - Task 4: Character
 
 Literally, the character identification problem is tackled as a coreference resolution task with a further step on entity linking.In terms of this task, the baseline model generates mentions from a coreference system, and then each coreference chain is linked to a specific character identity. Both parts are implemented with agglomerative convolutional neural network in previous system \cite{Robust,Character}.Alternatively, we intend to use Bidirectional-LSTM with attention mechanism to address the same problem, which proves to have a satisfying performance in many NLP tasks. In our project, we apply the end-to-end neural coreference resolution model introduced by Lee and He, etc.\cite{2017arXiv170707045L}. After obtaining the predicted clusters of mentions by the end-to-end coreference system, we choose the same algorithm of entity-linking as the one Chen proposed in his paper \cite{Robust}.
 
-\section{Related Works}
 \section{Related Work}
 \subsection{Coreference resolution}
 The area of coreference resolution has resorted to the techniques of machine learning for many years. Still, the learning problem is challenging and, until very recently, hand-engineered systems built on top of automatically produced parse trees \cite{Raghunathan:2010:MSC:1870658.1870706} outperformed all learning approaches.\cite{Durrett2013EasyVA} showed that highly lexical learning approaches reverse this trend, and more recent neural models\cite{2016arXiv160403035W,2016arXiv160908667C,2016arXiv160601323C} have achieved noticeable performance gains. However, all of the aforementioned models still use parsers for head features and include highly engineered mention proposal algorithms.Such pipelined systems suffer from two major drawbacks. First, parsing mistakes can introduce cascading errors. Second, many hand-engineered rules do not generalize ideally to new languages or domains.  
@@ -80,10 +79,10 @@ As indicated by the Dialogue State Tracking Challenges hosted by Microsoft  \cit
 
 \section{End-to-End Coreference Resolution}
 
-\subsection{Inroduction}
-Recent coreference models usually rely on syntactic parsers. However, the end-to-end coreference resolution directly consider all the spans up to a maximum length in the document as potential mentions,  compute the probability of possible ancestors (previous span) for each span, and directly optimizes the marginal likelihood of antecedent spans from gold coreference clusters.
+\subsection{Basic Idea}
+Traditional coreference models usually rely on syntactic parsers from the perspective of the linguistics. In contrast, the end-to-end coreference resolution directly considers all the spans up to a maximum length in the document as potential mentions,  computes the probability of possible ancestors (previous span) for each span, and directly optimizes the marginal likelihood of antecedent spans from gold coreference clusters.
 
-Since the number of potential mentions is very large, it is impractical to score all span pairs. So this model uses unary mention scores to prune the space of pairs of spans(spans and antecedents), which significantly reduce the pairwise computations.
+Since the number of potential mentions is very large, it is impractical to score all span pairs. Therefore, this model uses unary mention scores to prune the space of pairs of spans(spans and antecedents), which significantly reduce the pairwise computations.
 
 \subsection{Model}
 
