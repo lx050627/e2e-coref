@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2017 17:34
+=======
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.21)  9 DEC 2017 17:45
+>>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -63,7 +67,11 @@ LaTeX Font Info:    ... okay on input line 52.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 52.
+<<<<<<< HEAD
  (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+=======
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+>>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ABD: EveryShipout initializing macros
@@ -98,7 +106,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 80.
+<<<<<<< HEAD
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+=======
+ [1
+>>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 
 
 
@@ -116,22 +128,35 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 107.
 
+<<<<<<< HEAD
 Underfull \hbox (badness 1231) in paragraph at lines 122--123
+=======
+Underfull \hbox (badness 1231) in paragraph at lines 121--122
+>>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 []\OT1/ptm/m/n/10.95 We pre-pare three em-bed-dings gen-er-ated by
  []
 
 [2]
+<<<<<<< HEAD
 Underfull \hbox (badness 5189) in paragraph at lines 143--144
+=======
+Underfull \hbox (badness 5189) in paragraph at lines 142--143
+>>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 \OT1/ptm/m/n/10.95 met-rics apro-pos coref-er-ence res-o-lu-tion:MUC,
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 1629) in paragraph at lines 143--144
+=======
+Underfull \hbox (badness 1629) in paragraph at lines 142--143
+>>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 \OML/cmm/m/it/10.95 B[]$\OT1/ptm/m/n/10.95 ,and $\OML/cmm/m/it/10.95 CEAF[]$\OT
 1/ptm/m/n/10.95 .The pre-ci-sion, re-call and F1
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+<<<<<<< HEAD
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 148.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
@@ -141,12 +166,20 @@ Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
 Underfull \hbox (badness 1365) in paragraph at lines 151--153
+=======
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
+Missing character: There is no â€™ in font ptmr7t!
+Missing character: There is no â€™ in font ptmr7t!
+
+Underfull \hbox (badness 1365) in paragraph at lines 150--152
+>>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
 \OML/cmm/m/it/10.95 CEAF[]$\OT1/ptm/m/n/10.95 (Luo,2005) met-ric fur-ther clar-
 i-fies the
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
+<<<<<<< HEAD
                Default added (so using `tbp') on input line 160.
 
 
@@ -171,12 +204,26 @@ If that doesn't work, type  X <return>  to quit.
 Underfull \hbox (badness 2181) in paragraph at lines 215--219
 [][]\OT1/pcr/m/n/10.95 \appendix []\OT1/ptm/m/n/10.95 be-fore any ap-pendix sec
 -tion to
+=======
+               Default added (so using `tbp') on input line 159.
+
+
+Overfull \hbox (336.46904pt too wide) in paragraph at lines 163--172
+ [][] 
  []
 
-[4
+[3]
+No file acl2016.bbl.
 
-] (./acl2016.aux) ) 
+Underfull \hbox (badness 2181) in paragraph at lines 227--231
+[]\OT1/pcr/m/n/10.95 \appendix \OT1/ptm/m/n/10.95 be-fore any ap-pendix sec-tio
+n to
+>>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
+ []
+
+[4] (./acl2016.aux) ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  555 strings out of 492995
  7189 string characters out of 6132704
  69866 words of memory out of 5000000
@@ -201,3 +248,14 @@ PDF statistics:
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+=======
+ 540 strings out of 493706
+ 6995 string characters out of 6145768
+ 67332 words of memory out of 5000000
+ 3924 multiletter control sequences out of 15000+600000
+ 12844 words of font info for 41 fonts, out of 8000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 31i,9n,23p,914b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on acl2016.pdf (4 pages).
+>>>>>>> 180652d577ed9ddf6dcd2fe6fcef3d5b14404e20
