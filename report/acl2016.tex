@@ -194,13 +194,13 @@ Rather than evaluating coreference chains merely on their links,$B^{3}$(Bagga an
 $CEAF_e$(Luo,2005) metric further clarifies the downside of $B^{3}$, in which entites can be used more than once during evaluation. Consequently, both multiple coreference chains of the same entity and chains with mentions of multiple entities are not penalized. To mitigate the aforementioned problem, $CEAF_e$ evaluates exclusively on the best one-to-one mapping between the system’s and gold’s entities.
 
 \section{Results and Analysis}
-\subsection{Ablations}
+\subsection{Ablation}
 To verify whether each component in our model is actually indispensable, we ablate various parts of the architecture and report the average F1 values on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features. In our dataset, the width of mention is one or two most of the time owing to the nature of daily dialogue, so the head-finding attention mechanism for each span seems to be useless. We select no head ablation to verify this guess. Besides, we also intent to demonstrate the significance of feature encoding.
 
 \subsection{Coreference Resolution Results}
 We conducted one complete experiment and two ablation experiments, no heads and no features. The performances of coreference resolution using these three models are shown in Table 1. 
 
-As we expected, there is almost no difference between the F1 value of normal model and F1 value of no heads model. What's more, the results unveil that the feature encoding indeed contributes to the better performance of coreference system, for the F1 value decreases conspicuously after it is derived from the complete system.  
+As we expected, there is almost no difference between the F1 value of normal model and F1 value of no heads model. What's more, the results unveil that the feature encoding indeed contributes to the better performance of coreference system, for the F1 value decreases conspicuously after the complete system is deprived of it.  
 
 The overall performance of coreference resolution is satisfactory and encouraging according to the F1 evaluation metric, which confirms the efficacy of the end-to-end system.
 
