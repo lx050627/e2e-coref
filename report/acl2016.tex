@@ -149,13 +149,13 @@ In order to fix the input tensor size of both cluster embedding and mention-pair
 \end{equation}
 
 
-After concatenation, we feed them into a feed-forward neural network with two hidden layers. Final output is a softmax with the idmention of entity id number in Friends TV show.
+After concatenation, we feed them into a feed-forward neural network with two hidden layers. Final output is a softmax layer with the idmention of entity id number in Friends TV show.
 
 \subsection{Implementation}
 Our training data has 374 documents, which contains totally 13280 gold mentions that have gold entity label. Firstly, we need to get gold clusters and generate three embeddings, i.e. mention, cluster and mention pair embeddings. Since all gold clusters are labeled with entity ids, we can flat clusters to mentions while computing three embeddings. We can easily get mention embeddings from the pretrained coref model.
 
 
-\section{Dataset and Evalution Metrics}
+\section{Dataset and Evaluation Metrics}
 \subsection{Data Description}
 The data comes from the scripts of the first two seasons of TV show Friends, which are already annotated for this task. Specifically, each season consists of episodes, and each episode is comprised of scenes.Furthermore, each scene is segmented into sentences.All datasets follow the CoNLL 2012 Shared Task data format. Each sentence is delimited by a new line and each column indicates the information regarding the word or the punctuation.
 \begin{table*}[]
