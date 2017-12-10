@@ -194,9 +194,15 @@ $CEAF_e$(Luo,2005) metric further clarifies the downside of $B^{3}$, in which en
 To verify whether each component in our model is actually indispensable, we ablate various parts of the architecture and report the average F1 values on these experiments. We conducted one complete experiment and two ablation experiments, no heads and no features. In our dataset, the width of mention is one or two most of the time owing to the nature of daily dialogue, so the head-finding attention mechanism for each span seems to be useless.We select no head ablation to verify this guess. Besides, we also intent to demonstrate the significance of feature encoding.
 
 \subsection{Coreference Resolution Results}
+<<<<<<< HEAD
 We conducted one complete experiment and two ablation experiments, no heads and no features. The performances of coreference resolution using these three models are shown in Table 1. 
 As we expected, there is almost no difference between the F1 of normal model and the F1 of no heads model. What's more, the results unveils that the feature encoding indeed contributes to the better performance of coreference system, for the F1 value decreases conspicuously after it is deprived from the complete system. 
 The overall performance of coreference resolution is satisfactory according to the F1 evaluation metric, which confirms the efficacy of the end-to-end system.
+=======
+We conducted one complete experiment and two ablation experiments, no heads and no features. The results are shown in Table 1. Comparisons of those results shows no heads experiments has the best result. The reasons is, in Friends dataset, most mentions are signle word, which means mention start and mention end are the same word and metion head has no significant contribution in this case. The result also indicates feature is an important factor of this model. In terms of coreference resolution, this model has a encouraging results comparing to most models.
+
+
+>>>>>>> origin/master
 
 \subsection{Entity Linking Results}
 We only got about 20\% accuracy on character identification prediction, addressing that simply using combination of mention embeddings generated from coreference system is weak for predcting entity ids. It fails to contain cluster information even though the coreference system does be trained to optimize the clustering accuracy. 
@@ -218,7 +224,10 @@ Another improvement should be adding one layer for output entity ids after the c
 % include your own bib file like this:
 %\bibliographystyle{acl}
 %\bibliography{acl2016}
+\bibliography{acl2016}
+\bibliographystyle{acl2016}
 
+\appendix
 
 
 
