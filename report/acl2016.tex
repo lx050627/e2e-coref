@@ -22,6 +22,8 @@
 \usepackage{latexsym}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{float}
+\usepackage{floatrow}
 
 
 %\aclfinalcopy % Uncomment this line for the final submission
@@ -97,7 +99,7 @@ A  bidirectional LSTM (Hochreiter and Schmidhuber, 1997) to encode the lexical i
 Low-scoring spans are pruned, so that only a manageable number of spans is considered for coreference decisions.
 
 \begin{figure}[h]                
- \includegraphics[width=2.75in,height=1.75in]{03.jpg}
+ \includegraphics[width=0.5\textwidth]{03.jpg}
  \caption{Second step of the model}             
 \end{figure}
 
@@ -124,7 +126,7 @@ Once the coreference resolution system is built and trained, we can predict co-r
 
 \subsection{Model}
 \begin{figure}[h]                
- \includegraphics[width=3.3in,height=2.05in]{05.jpg}
+ \includegraphics[width=0.5\textwidth]{05.jpg}
  \caption{Character identification model}             
 \end{figure}
 
@@ -163,6 +165,20 @@ Our training data has 374 documents, which contains totally 13280 gold mentions 
 \section{Dataset and Evalution Metrics}
 \subsection{Data Description}
 The data comes from the scripts of the first two seasons of TV show Friends, which are already annotated for this task. Specifically, each season consists of episodes, and each episode is comprised of scenes.Furthermore, each scene is segmented into sentences.All datasets follow the CoNLL 2012 Shared Task data format. Each sentence is delimited by a new line and each column indicates the information regarding the word or the punctuation.
+\begin{table*}[]
+\centering
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline
+        & \multicolumn{3}{l|}{No Features} & \multicolumn{3}{l|}{No Heads} & \multicolumn{3}{l|}{Normal}   \\ \hline
+        & F1       & R   & P  & F1      & R  & P & F1      & R  & P \\ \hline
+MUC     & 79.14\%  & 76.98\%  & 81.42\%    & 80.90\% & 80.38\% & 81.43\%   & 80.84\% & 81.64\% & 80.71\%   \\ \hline
+B\textsuperscript{3}      & 60.68\%  & 55.22\%  & 67.34\%    & 64.38\% & 62.54\% & 66.34\%   & 65.39\% & 68.89\% & 62.23\%   \\ \hline
+CEAF\textsubscript{e} & 48.47\%  & 48.21\%  & 48.43\%    & 52.89\% & 50.54\% & 55.48\%   & 51.80\% & 53.51\% & 50.20\%   \\ \hline
+AVG     & 62.76\%  & 60.14\%  & 65.73\%    & 66.06\% & 64.49\% & 67.75\%   & 66.02\% & 68.02\% & 64.17\%   \\ \hline
+\end{tabular}
+\caption{Results on No Features, No Heads, and Normal}
+\end{table*}
 \subsection{Data Split}
 Considering the amount of total data is not so sufficient, we simply split them into two datasets for different purposes, training and evaluation sets. The exact raito of our training set to our evaluation set is 4:1. The evaluation set contains seventy-four scenes in \textit{Friends}.
 
@@ -175,31 +191,18 @@ MUC(Vilain et al.,1995) concerns the number of pairwise links needed to be inser
 \textbf{B\textsuperscript{3}} \\
 Rather than evaluating coreference chains merely on their links,$B^{3}$(Bagga and Baldwin,1998) metric computes precision and recall on a mention level.System performance is evaluated by the average of all mentions scores.
 
+
 \textbf{CEAF\textsubscript{e}} \\
 $CEAF_e$(Luo,2005) metric further clarifies the downside of $B^{3}$, in which entites can be used more than once during evaluation. Consequently, both multiple coreference chains of the same entity and chains with mentions of multiple entities are not penalized.To mitigate the aforementioned problem, $CEAF_e$ evaluates exclusively on the best one-to-one mapping between the system’s and gold’s entities.
 
-\section{Experiments}
-We use a dataset generated for first two seasons of Friends, which has less training data and shorter mentions than CoNLL-2012.
 
 \section{Results and Analysis}
+
 
 \subsection{Coreference Resolution Results}
 We conducted one complete experiment and two ablation experiments, no heads and no features. The result of no features is shown in Table 1.
 
-\begin{table*}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
-\hline
-        & \multicolumn{3}{l|}{No Features} & \multicolumn{3}{l|}{No Heads} & \multicolumn{3}{l|}{Normal}   \\ \hline
-        & F1       & R   & P  & F1      & R  & P & F1      & R  & P \\ \hline
-MUC     & 79.14\%  & 76.98\%  & 81.42\%    & 80.90\% & 80.38\% & 81.43\%   & 80.84\% & 81.64\% & 80.71\%   \\ \hline
-B\textsuperscript{3}      & 60.68\%  & 55.22\%  & 67.34\%    & 64.38\% & 62.54\% & 66.34\%   & 65.39\% & 68.89\% & 62.23\%   \\ \hline
-CEAF\textsubscript{e} & 48.47\%  & 48.21\%  & 48.43\%    & 52.89\% & 50.54\% & 55.48\%   & 51.80\% & 53.51\% & 50.20\%   \\ \hline
-AVG     & 62.76\%  & 60.14\%  & 65.73\%    & 66.06\% & 64.49\% & 67.75\%   & 66.02\% & 68.02\% & 64.17\%   \\ \hline
-\end{tabular}
-\end{table*}
+
 
 \subsection{Entity Linking Results}
 We only got about 20\% accuracy on character identification prediction, addressing that simply using combination of mention embeddings generated from coreference system is weak for predcting entity ids. It fails to contain cluster information even though the coreference system does be trained to optimize the clustering accuracy. 

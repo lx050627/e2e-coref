@@ -1,12 +1,5 @@
 # Fdb version 3
-["bibtex acl2016"] 1512878931 "acl2016.aux" "acl2016.bbl" "acl2016" 1512879939
-  "./acl2016.bst" 1512875069 25099 9e361dd593cf5bde4bcdca583d3b8ad3 ""
-  "acl2016.aux" 1512879939 109 2d0ae2025342d4bd812f2b5420696b22 ""
-  "acl2016.bib" 1512875069 1100 35c626a522fd933d9ba2d3b08dcfb41b ""
-  (generated)
-  "acl2016.blg"
-  "acl2016.bbl"
-["pdflatex"] 1512879938 "acl2016.tex" "acl2016.pdf" "acl2016" 1512879939
+["pdflatex"] 1512881369 "acl2016.tex" "acl2016.pdf" "acl2016" 1512881370
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1480098688 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -77,6 +70,8 @@
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/latexsym.sty" 1480098821 2854 d9a09e80ec53a1710adc74c0e8300370 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/size11.clo" 1480098821 8308 f91506bb4df6d8527331f7bbeaf0e63c ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/ulasy.fd" 1480098821 2020 d5c6fbbe41610194529ecfc3e463c559 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty" 1480098828 6749 16d2656a1984957e674b149555f1ea1d ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/floatrow/floatrow.sty" 1480098828 60013 31ae5968a4a3fc2e332dd6a87f8e924b ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1480098830 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def" 1485129666 58250 3792a9d2d1d664ee8c742498e295b051 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty" 1492297155 14603 b288c52bd5d46d593af31dbc7e548236 ""
@@ -100,10 +95,9 @@
   "02.jpg" 1512875069 62785 2afccbf2a5e7978229b20d6ba7bdca3b ""
   "03.jpg" 1512875069 37904 2866f0b53c0684638f4eed9bf86ceea2 ""
   "05.jpg" 1512875069 111929 a380ee70924cef1ff15e5f98909acd4e ""
-  "acl2016.aux" 1512879939 109 2d0ae2025342d4bd812f2b5420696b22 ""
-  "acl2016.bbl" 1512878931 49 0eba253fc001332e731e8aba3f23127b "bibtex acl2016"
+  "acl2016.aux" 1512881370 38 5d4896325579401ba7690d2aaf2f2aa7 ""
   "acl2016.sty" 1512855302 23347 c80bf9b662fed6489d932f364c6b989a ""
-  "acl2016.tex" 1512879938 18122 f6478c3a70d7f256e3cae3d1556d2469 ""
+  "acl2016.tex" 1512881368 17195 1887b098a53ef8fe219017441bdc1a38 ""
   (generated)
   "acl2016.aux"
   "acl2016.log"
