@@ -16,9 +16,3 @@ logs/best/*
 !logs/best/*.max.*
 !logs/best/*.entity_linking.*
 
-!report
-report/*
-!report/acl2016.tex
-!report/acl2016.bib
-!report/acl2016.bst
-!report/acl2016.sty
